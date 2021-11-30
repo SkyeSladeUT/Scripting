@@ -1,0 +1,464 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Leo_Head
+  m_Shader: {fileID: 4800000, guid: 0e9d5a909a1f7e84882a534d0d11e49f, type: 3}
+  m_ShaderKeywords: SILHOUETTE_CURVATURE_BASIC _TRANSLUCENCY _WETNESS_NONE
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Albedo:
+        m_Texture: {fileID: 2800000, guid: 24dd56cb60c95724495165cda916ab67, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Albedo2:
+        m_Texture: {fileID: 2800000, guid: 24dd56cb60c95724495165cda916ab67, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 26b9fce7c2efb5f4994ca2a8aa68f88a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cube:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Diffuse:
+        m_Texture: {fileID: 2800000, guid: 24dd56cb60c95724495165cda916ab67, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DropletsMap:
+        m_Texture: {fileID: 2800000, guid: 471631afc291fae4087fd072b5dbe4f3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FaceOpacityMask:
+        m_Texture: {fileID: 2800000, guid: 311c029e4c8a7bb498725244ae11b0a3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FaceOpacityMask1:
+        m_Texture: {fileID: 2800000, guid: 2daee3ce020c1cc4e812154af8f50fca, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 24dd56cb60c95724495165cda916ab67, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMapDetail:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 2800000, guid: 26b9fce7c2efb5f4994ca2a8aa68f88a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal1:
+        m_Texture: {fileID: 2800000, guid: 26b9fce7c2efb5f4994ca2a8aa68f88a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: 26b9fce7c2efb5f4994ca2a8aa68f88a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ObjectNormalsTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ObjectTangentsTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RippleMap:
+        m_Texture: {fileID: 2800000, guid: 4d78c388d122b294d9dad82d13d2d3bc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RippleMapSnow:
+        m_Texture: {fileID: 2800000, guid: 4d78c388d122b294d9dad82d13d2d3bc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RippleMapWet:
+        m_Texture: {fileID: 2800000, guid: 4d78c388d122b294d9dad82d13d2d3bc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Smoothness:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SparkleMap:
+        m_Texture: {fileID: 2800000, guid: 8311693489c9728459f451148124b4ae, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SparkleMapGlitter:
+        m_Texture: {fileID: 2800000, guid: 8311693489c9728459f451148124b4ae, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SparkleMapSnow:
+        m_Texture: {fileID: 2800000, guid: 8311693489c9728459f451148124b4ae, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 2800000, guid: 7bd504b27b33e254fa1dc0e0139b294d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Specular:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecularRGBGlossADetail:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 2800000, guid: 24dd56cb60c95724495165cda916ab67, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Wireframe_ColorTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Wireframe_NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Wireframe_Specular_Lookup:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ASEOutlineWidth: 1
+    - _AlbedoBlendAmt: 1
+    - _BendNormalsFreq: 4
+    - _BendNormalsStrength: 0.05
+    - _BumpScale: 0.4
+    - _BumpScale2: 1
+    - _Casetype: 2
+    - _Casetype1: 1
+    - _Cull: 2
+    - _CurvatureCustomU: 0
+    - _CurvatureCustomV: 0
+    - _CurvatureMultU: 1
+    - _CurvatureMultV: 1
+    - _CurvedWorldTitle: 0
+    - _Cutoff: 0.5
+    - _DecalMask: 1
+    - _DecalMaskGUI: 3
+    - _Depth: 0.1
+    - _DepthReductionDistance: 20
+    - _DepthWrite: 0
+    - _DetailEmissiveness: 0
+    - _DetailGloss: 1
+    - _DetailMetalness: 1
+    - _DetailNormalLerp: 0
+    - _DetailNormalMapScale: 1
+    - _DetailSpecLerp: 1
+    - _DetailUVMult: 1
+    - _DiffuseScatter: 1
+    - _DiffuseScatteringExponent: 9.08
+    - _DiffuseScatteringOffset: 0.299
+    - _DistSteps: 64
+    - _DistStepsShadows: 64
+    - _DropletsAnimSpeed: 10
+    - _DropletsTiling: 1
+    - _DstBlend: 0
+    - _EdgeLength: 15
+    - _Emission: 0
+    - _EmissionHue: 0
+    - _EmissionPulsateSpeed: 0
+    - _EmissionSaturation: 1
+    - _FlowCycleScale: 2
+    - _Frost: 1
+    - _FrostFromGlobal: 0
+    - _Glitter: 0
+    - _GlitterAnimationFrequency: 0.02
+    - _GlitterColorization: 0.2
+    - _GlitterDensity: 0.2
+    - _GlitterFilter: -1
+    - _GlitterMask: 0
+    - _GlitterShown: 1
+    - _GlitterTiling: 1
+    - _GlossMapScale: 1
+    - _GlossMax: 1
+    - _GlossMin: 0.147
+    - _Glossiness: 0.74
+    - _Glossiness2: 1
+    - _GlossyReflections: 1
+    - _Hue: 1
+    - _MainShown: 1
+    - _Metallic: 0
+    - _MinPulseBrightness: 0
+    - _Mode: 0
+    - _OcclusionStrength: 0
+    - _OcclusionStrength2: 0
+    - _Occlusion_from_albedo_alpha: 1
+    - _OpacityAmt: 0
+    - _OpacityAmt1: 0.21
+    - _OpacityFresnel: 1
+    - _OpacityFresnel1: 1
+    - _Opacity_contrast: 1.19
+    - _Opacity_contrast1: 1
+    - _POM: 0
+    - _POMCurvatureType: 0
+    - _POMPrecomputedFlag: 0
+    - _POMShadows: 0
+    - _POMShown: 1
+    - _POM_BottomCut: 0
+    - _POM_ExtrudeVolume: 0
+    - _POM_MeshIsVolume: 0
+    - _PanEmissionMask: 0
+    - _PanUSpeed: 0
+    - _PanVSpeed: 0
+    - _Parallax: 0.02
+    - _Parallax2: 0.04
+    - _Phong: 0
+    - _Pierceable: 0
+    - _PresetsShown: 0
+    - _PulsateEmission: 0
+    - _RainIntensity: 1
+    - _RainIntensityFromGlobal: 0
+    - _Refraction: 0.02
+    - _RefractionBumpScale: 0.5
+    - _RefractionChromaticAberration: 0
+    - _ReliefMIPbias: 0
+    - _RippleAnimSpeed: 0.5
+    - _RippleRefraction: 0.3
+    - _RippleSpecFilter: 0.02
+    - _RippleStrength: 0.5
+    - _RippleStrengthFromGlobal: 0
+    - _RippleTiling: 1
+    - _Saturation: 1
+    - _SecOcclusionStrength: 0
+    - _SecondaryShown: 1
+    - _ShadowCull: 2
+    - _ShadowMIPbias: 0
+    - _ShadowStrength: 1
+    - _SmoothAmt: 0.393
+    - _SmoothContrast: 0.371
+    - _Smoothness: 0.454
+    - _SmoothnessTextureChannel: 0
+    - _Smoothness_from_albedo_alpha: 0
+    - _Snow: 0
+    - _SnowBumpMacro: 0.1
+    - _SnowBumpMicro: 0.08
+    - _SnowBumpMicroFromGlobal: 0
+    - _SnowDeepSmoothen: 4
+    - _SnowDiffuseScatteringExponent: 6
+    - _SnowDiffuseScatteringOffset: -0.5
+    - _SnowDissolve: 2
+    - _SnowDissolveFromGlobal: 0
+    - _SnowDissolveMaskOcclusion: 0
+    - _SnowGlitterColorFromGlobal: 0
+    - _SnowHeightThreshold: -10000
+    - _SnowHeightThresholdTransition: 1000
+    - _SnowLevelFromGlobal: 0
+    - _SnowMacroTiling: 1
+    - _SnowMicroTiling: 4
+    - _SnowShown: 1
+    - _SnowSlopeDamp: 2
+    - _SnowSpecGlossFromGlobal: 0
+    - _SnowWorldMapping: 0
+    - _Softness: 2
+    - _SoftnessFade: 0.4
+    - _SpecContrast: 0.107
+    - _Specular: 0.042
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _Tan2ObjCustomU: 1
+    - _Tan2ObjCustomV: 1
+    - _Tan2ObjMultU: 1
+    - _Tan2ObjMultV: 1
+    - _Tess: 9
+    - _TessDepth: 0.05
+    - _TessEdgeLengthLimit: 5
+    - _TessOffset: 0.1
+    - _Translucency: 1
+    - _TranslucencyConstant: 0
+    - _TranslucencyDeferredLightIndex: 0
+    - _TranslucencyExponent: 2
+    - _TranslucencyNDotL: 1
+    - _TranslucencyNormalOffset: 0.3
+    - _TranslucencyOcclusion: 0
+    - _TranslucencyPointLightDirectionality: 1
+    - _TranslucencyShown: 1
+    - _TranslucencyStrength: 0.68
+    - _TranslucencySuppressRealtimeShadows: 6.74
+    - _UVSec: 0
+    - _UVSecOcclusion: 0
+    - _UVSecOcclusionLightmapPacked: 0
+    - _UV_Clip: 0
+    - _UseAoMap: 0
+    - _UseColorMap: 1
+    - _UseEmissiveMap: 0
+    - _UseMetallicMap: 0
+    - _UseNormalMap: 1
+    - _UseRoughnessMap: 0
+    - _WetDroplets: 1
+    - _WetRipples: 1
+    - _Wetness: 0
+    - _WetnessConst: 0
+    - _WetnessConstFromGlobal: 0
+    - _WetnessDarkening: 2
+    - _WetnessEmissiveness: 0
+    - _WetnessEmissivenessWrap: 0
+    - _WetnessFlowGlobalTime: 1
+    - _WetnessLevel: 1
+    - _WetnessLevelFromGlobal: 0
+    - _WetnessMergeWithSnowPerMaterial: 0
+    - _WetnessNormMIP: 5
+    - _WetnessNormStrength: 2
+    - _WetnessNormalInfluence: 0.5
+    - _WetnessShown: 1
+    - _WetnessUVMult: 1
+    - _WireframeShader_Diameter: 1
+    - _WireframeShader_Smoothness: 0
+    - _WireframeShader_Thickness: 0.01
+    - _Wireframe_BaseVertexColor: 0
+    - _Wireframe_BumpEnumID: 0
+    - _Wireframe_ColorEmissionStrength: 0
+    - _Wireframe_DistanceFade: 0
+    - _Wireframe_DistanceFadeEnd: 10
+    - _Wireframe_DistanceFadeStart: 5
+    - _Wireframe_DynamicMaskEdgeSmooth: 0
+    - _Wireframe_DynamicMaskEffectsBaseTexEnumID: 0
+    - _Wireframe_DynamicMaskEffectsBaseTexInvert: 0
+    - _Wireframe_DynamicMaskEnumID: 0
+    - _Wireframe_DynamicMaskInvert: 0
+    - _Wireframe_DynamicMaskType: 1
+    - _Wireframe_FresnelBias: 0
+    - _Wireframe_FresnelEnumID: 0
+    - _Wireframe_FresnelInvert: 0
+    - _Wireframe_FresnelPow: 1
+    - _Wireframe_IncludeLightEnumID: 0
+    - _Wireframe_ReflectionEnumID: 0
+    - _Wireframe_Reflection_Fresnel_Bias: -1
+    - _Wireframe_Reflection_Roughness: 0.3
+    - _Wireframe_Reflection_Strength: 0.5
+    - _Wireframe_RenderingOptions_ODLEnumID: 0
+    - _Wireframe_SpecularEnumID: 0
+    - _Wireframe_Title_M_Options: 0
+    - _Wireframe_Title_Rendering_Options: 0
+    - _Wireframe_Title_S_Options: 0
+    - _Wireframe_Title_UAR_Options: 0
+    - _Wireframe_Title_V_Options: 0
+    - _Wireframe_Title_W_Options: 0
+    - _Wireframe_TransparencyEnumID: 0
+    - _Wireframe_Transparency_M_Options: 0
+    - _Wireframe_TransparentTex_Alpha_Offset: 0
+    - _Wireframe_TransparentTex_Invert: 0
+    - _Wireframe_WireVertexColor: 0
+    - _ZWrite: 1
+    - __dirty: 0
+    - _normAmt: 0.484
+    - _normAmt1: 0.757
+    - maxDist: 10
+    - minDist: 1
+    m_Colors:
+    - _ASEOutlineColor: {r: 0, g: 0, b: 0, a: 0}
+    - _AlbedoColor: {r: 1, g: 1, b: 1, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color2: {r: 1, g: 1, b: 1, a: 1}
+    - _CurvatureMultOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _CutoffEdgeGlow: {r: 0, g: 0, b: 0, a: 0.02}
+    - _DetailColor: {r: 1, g: 1, b: 1, a: 1}
+    - _DetailSpecGloss: {r: 1, g: 1, b: 1, a: 1}
+    - _DiffuseScatteringColor: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 0}
+    - _DiffuseScatteringColor2: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GlitterColor: {r: 0.8, g: 0.8, b: 0.8, a: 0.2}
+    - _GlitterColor2: {r: 0.8, g: 0.8, b: 0.8, a: 0.2}
+    - _OpacityColor: {r: 1, g: 1, b: 1, a: 0}
+    - _OpacityColor1: {r: 1, g: 1, b: 1, a: 0}
+    - _ReflectColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _SnowColorAndCoverage: {r: 1, g: 1, b: 1, a: 0.11}
+    - _SnowDiffuseScatteringColor: {r: 1, g: 1, b: 1, a: 0}
+    - _SnowEmissionTransparency: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+    - _SnowGlitterColor: {r: 0.8, g: 0.8, b: 0.8, a: 0.2}
+    - _SnowSpecGloss: {r: 0.1, g: 0.1, b: 0.1, a: 0.15}
+    - _SnowTranslucencyColor: {r: 0.75, g: 1, b: 1, a: 1}
+    - _SpecColor: {r: 0.34, g: 0.34, b: 0.34, a: 0.612}
+    - _SpecColor2: {r: 1, g: 1, b: 1, a: 1}
+    - _Tan2ObjectMultOffset: {r: 0, g: 0, b: 1, a: 1}
+    - _TranslucencyColor: {r: 1, g: 0, b: 0, a: 1}
+    - _TranslucencyColor2: {r: 1, g: 1, b: 1, a: 1}
+    - _UV_Clip_Borders: {r: 0, g: 0, b: 1, a: 1}
+    - _UvOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _UvTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _WetnessColor: {r: 0, g: 0, b: 0, a: 0}
+    - _WetnessSpecGloss: {r: 0.05, g: 0.05, b: 0.05, a: 0.7}
+    - _Wireframe_Color: {r: 1, g: 0, b: 0, a: 1}
+    - _Wireframe_ColorTexture_Scroll: {r: 0, g: 0, b: 0, a: 0}
+    - _Wireframe_MainTex_Scroll: {r: 0, g: 0, b: 0, a: 0}
+    - bumpMap2TexelSize: {r: 1, g: 1, b: 1, a: 1}
+    - bumpMapTexelSize: {r: 0.00048828125, g: 0.00048828125, b: 2048, a: 2048}
+    - heightMapTexelSize: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []

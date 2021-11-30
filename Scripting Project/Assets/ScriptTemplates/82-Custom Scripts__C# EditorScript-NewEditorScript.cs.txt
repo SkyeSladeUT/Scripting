@@ -1,0 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEditor;
+
+    #ROOTNAMESPACEBEGIN#
+//[CustomEditor(typeof(Type For Editor))]
+public class #SCRIPTNAME# : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        //Type For Editor currentTarget = (Type For Editor)target;
+
+    }
+}
+#ROOTNAMESPACEEND#
