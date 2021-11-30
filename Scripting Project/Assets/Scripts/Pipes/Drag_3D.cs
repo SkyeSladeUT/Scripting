@@ -23,10 +23,7 @@ public class Drag_3D : MonoBehaviour
     protected virtual void OnMouseDown()
     {
         Debug.Log("On Mouse Down");
-        if(onBeginDrag != null)
-        {
-            onBeginDrag(new DragEventArgs(this));
-        }
+        onBeginDrag?.Invoke(new DragEventArgs(this));
         _zPosition = _camera.WorldToScreenPoint(gameObject.transform.position).z;
         _offset = gameObject.transform.position - GetMouseAsWorldPoint();
     }
@@ -46,9 +43,6 @@ public class Drag_3D : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if(onEndDrag != null)
-        {
-            onEndDrag(new DragEventArgs(this));
-        }
+        onEndDrag?.Invoke(new DragEventArgs(this));
     }
 }
