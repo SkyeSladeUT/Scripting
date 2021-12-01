@@ -20,6 +20,22 @@ public class TileGrid
         set { _tileSpots[column, row] = value; }
     }
 
+    public TileSpot this[int index]
+    {
+        get 
+        { 
+            int column = index % _numColumns;
+            int row = (int)(index / _numColumns);
+            return _tileSpots[column, row];
+        }
+        set
+        {
+            int column = index % _numColumns;
+            int row = (int)(index / _numColumns);
+            _tileSpots[column, row] = value;
+        }
+    }
+
     public TileGrid(int numColumns, int numRows)
     {
         _numColumns = numColumns;

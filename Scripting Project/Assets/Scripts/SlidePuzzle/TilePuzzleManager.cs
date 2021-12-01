@@ -10,13 +10,15 @@ public class TilePuzzleManager : MonoBehaviour
     private List<GameObject> _spotObjects;
     public Grid_Layout_3D GridParent;
     public float CellSize;
-    public List<GameObject> TappableObjects;
+    private List<GameObject> TappableObjects;
     private List<TileTap> _tappables;
+    public GameObject TileObject;
 
     public void Initialize()
     {
         grid = new TileGrid(NumberOfColumns, NumberOfRows);
         _spotObjects = new List<GameObject>();
+        TappableObjects = new List<GameObject>();
         for (int i = 0; i < NumberOfColumns; i++)
         {
             for (int j = 0; j < NumberOfRows; j++)
@@ -33,7 +35,13 @@ public class TilePuzzleManager : MonoBehaviour
         GridParent.CellSize.y = CellSize;
         GridParent.Setup();
         _tappables = new List<TileTap>();
-        for (int i = 0; i < TappableObjects.Count; i++)
+        for (int i = 0; i < grid.TileSpots.Length - 1; i++)
+        {
+            GameObject tempTile = Instantiate(TileObject);
+            tempTile.name = "Tile_" + i;
+            grid[i].ObjectInSpot = tempTile;
+        }
+        /*for (int i = 0; i < TappableObjects.Count; i++)
         {
             TileTap drag = TappableObjects[i].GetComponent<TileTap>();
             if (drag == null)
@@ -42,7 +50,7 @@ public class TilePuzzleManager : MonoBehaviour
             }
             _tappables.Add(drag);
             drag.onTap = OnTap;
-        }
+        }*/
     }
 
     public void OnTap(TileTapEventArgs e)
