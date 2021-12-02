@@ -26,9 +26,9 @@ public class PipeGrid
     public void Setup()
     {
         _pipeSpots = new PipeSpotObject[numColumns, numRows];
-        for(int i = 0; i < numColumns; i++)
+        for(int j = 0; j < numRows; j++)
         {
-            for(int j = 0; j < numRows; j++)
+            for(int i = 0; i < numColumns; i++)
             {
                 _pipeSpots[i, j] = new PipeSpotObject(i, j);
             }

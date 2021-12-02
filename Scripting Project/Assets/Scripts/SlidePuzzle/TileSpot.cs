@@ -13,15 +13,27 @@ public class TileSpot
     {
         get { return _row; }
     }
+    private int _index;
+    public int Index
+    {
+        get { return _index; }
+    }
 
-    private GameObject _objectInSpot;
-    public GameObject ObjectInSpot
+    private Vector3Tween _tileTween = new Vector3Tween();
+
+    private TileTap _objectInSpot;
+    public TileTap ObjectInSpot
     {
         get { return _objectInSpot; }
         set 
         { 
             _objectInSpot = value;
-            _objectInSpot.transform.position = transform.position;
+            if (_objectInSpot != null)
+            {
+                _tileTween.RunTween(gameObject, _objectInSpot.transform.position, transform.position, .25f, ScaleFunctions.Cubic, EaseFunctions.EaseInOut);
+                _objectInSpot.transform.rotation = transform.rotation;
+                //_objectInSpot.transform.position = transform.position;
+            }
         }
     }
 
@@ -42,10 +54,15 @@ public class TileSpot
         get { return _objectInSpot != null; }
     }
 
-    public TileSpot(int column, int row)
+    public TileSpot(int column, int row, int index)
     {
+        _index = index;
         _column = column;
         _row = row;
+        _tileTween.updateFunction = (t) =>
+        {
+            ObjectInSpot.transform.position = t.CurrentValue;
+        };
     }
 
     public override string ToString()

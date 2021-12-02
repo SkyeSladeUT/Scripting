@@ -21,9 +21,7 @@ public class PipeSpotObject
             _objectInSpot = value;
             if (value != null)
             {
-                Vector3 pos = Collider.transform.position;
-                pos.z = value.transform.position.z;
-                value.transform.position = pos;
+                value.transform.position = Collider.transform.position;
             }
         }
     }

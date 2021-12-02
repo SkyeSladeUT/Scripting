@@ -18,15 +18,15 @@ public class PipeManager : MonoBehaviour
     {
         grid = new PipeGrid(Columns, Rows);
         _spotObjects = new List<GameObject>();
-        for(int i = 0; i < Columns; i++)
+        for(int j = 0; j < Rows; j++)
         {
-            for(int j = 0; j < Rows; j++)
+            for(int i = 0; i < Columns; i++)
             {
                 GameObject temp = new GameObject("C" + i.ToString() + "_R" + j.ToString());
                 _spotObjects.Add(temp);
                 temp.transform.parent = GridParent.transform;
                 BoxCollider col = temp.AddComponent<BoxCollider>();
-                col.size = new Vector3(CellSize, CellSize, CellSize);
+                col.size = new Vector3(CellSize, CellSize, .01f);
                 col.isTrigger = true;
                 grid[i, j].Collider = col;
                 grid[i, j].name = temp.name;

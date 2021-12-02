@@ -6,6 +6,7 @@ using System;
 public class TileTapEventArgs : EventArgs
 {
     public TileTap tapped { get; set; }
+    public TileObject tile { get { return tapped.Tile; } }
 
     public TileTapEventArgs(TileTap tapped)
     {

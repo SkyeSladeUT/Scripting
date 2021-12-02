@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637673410431592040
-    m_Hash: 1070671169
+      ticks: 637740802437212533
+    m_Hash: 152270322
   m_LockFileStatus:
     m_FilePath: C:/Users/SkyeSlade/Documents/Unity/Scripting/Scripting Project/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637673410431662441
-    m_Hash: 1627820003
+      ticks: 637740802437292433
+    m_Hash: 1858021920
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -670,12 +670,12 @@ m_PackageAssets:
         url: git+https://github.com/Unity-Technologies/com.unity.test-framework.git
         revision: e6fe8892689398c0d9aba4587e0ba69edc3d82b8
         path: 
-    - packageId: com.unity.textmeshpro@3.0.6
+    - packageId: com.unity.textmeshpro@3.2.0-pre.2
       testable: 0
       isDirectDependency: 1
-      version: 3.0.6
+      version: 3.2.0-pre.2
       source: 1
-      resolvedPath: C:\Users\SkyeSlade\Documents\Unity\Scripting\Scripting Project\Library\PackageCache\com.unity.textmeshpro@3.0.6
+      resolvedPath: C:\Users\SkyeSlade\Documents\Unity\Scripting\Scripting Project\Library\PackageCache\com.unity.textmeshpro@3.2.0-pre.2
       assetPath: Packages/com.unity.textmeshpro
       name: com.unity.textmeshpro
       displayName: TextMeshPro
@@ -705,7 +705,19 @@ m_PackageAssets:
         Great
         performance. Since the geometry created by TextMeshPro uses two triangles
         per character just like Unity''s text components, this improved visual quality
-        and flexibility comes at no additional performance cost.'
+        and flexibility comes at no additional performance cost.
+
+
+
+
+        UPGRADE
+        NOTE
+
+        --------------------
+
+        This latest release of the TMP
+        package includes updated TMP Essential Resources and TMP Examples & Extras.
+        Be sure to update those via the "Window - TextMeshPro - Import..." menu options.'
       status: 4
       errors: []
       versions:
@@ -825,13 +837,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637547111200000000
+      datePublishedTicks: 637715587100000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.textmeshpro.git
-        revision: 01e57e3b7de18af9dfe9baaa0a0ff5cc4765c899
+        revision: faa89a3dad3dedf453b3e91223f2d050d811b039
         path: 
     - packageId: com.unity.timeline@1.4.8
       testable: 0

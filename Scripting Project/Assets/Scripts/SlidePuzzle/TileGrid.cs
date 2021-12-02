@@ -46,11 +46,11 @@ public class TileGrid
     public void Setup()
     {
         _tileSpots = new TileSpot[_numColumns, _numRows];
-        for (int i = 0; i < _numColumns; i++)
+        for (int j = 0; j < _numRows; j++)
         {
-            for (int j = 0; j < _numRows; j++)
+            for (int i = 0; i < _numColumns; i++)
             {
-                _tileSpots[i, j] = new TileSpot(i, j);
+                _tileSpots[i, j] = new TileSpot(i, j, (i + (j*_numColumns)));
             }
         }
     }
@@ -66,6 +66,73 @@ public class TileGrid
         return printString;
     }
 
+    public void MoveTile(TileSpot spot, TileTap tileObj)
+    {
+        int column = spot.Column;
+        int row = spot.Row;
+        TileSpot newSpot;
+        GameObject tile = spot.ObjectInSpot.gameObject;
+        if (column != 0)
+        {
+            newSpot = TileSpots[column - 1, row];
+            if (!newSpot.Filled)
+            {
+                spot.ObjectInSpot = null;
+                newSpot.ObjectInSpot = tileObj;
+                CheckPlacement();
+                return;
+            }
+        }
+        if(column != _numColumns-1)
+        {
+            newSpot = TileSpots[column + 1, row];
+            if (!newSpot.Filled)
+            {
+                spot.ObjectInSpot = null;
+                newSpot.ObjectInSpot = tileObj;
+                CheckPlacement();
+                return;
+            }
+        }
+        if(row != 0)
+        {
+            newSpot = TileSpots[column, row-1];
+            if (!newSpot.Filled)
+            {
+                spot.ObjectInSpot = null;
+                newSpot.ObjectInSpot = tileObj;
+                CheckPlacement();
+                return;
+            }
+        }
+        if(row != _numRows - 1)
+        {
+            newSpot = TileSpots[column, row + 1];
+            if (!newSpot.Filled)
+            {
+                spot.ObjectInSpot = null;
+                newSpot.ObjectInSpot = tileObj;
+                CheckPlacement();
+                return;
+            }
+        }
+        tileObj.Tile.Wiggle();
+    }
 
+    public bool CheckPlacement()
+    {
+        foreach(var s in TileSpots)
+        {
+            if(s.Index == 8)
+            {
+                continue;
+            }
+            else if(!s.Filled || s.ObjectInSpot.TileNum != s.Index+1)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 
 }

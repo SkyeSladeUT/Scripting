@@ -7,7 +7,10 @@ using UnityEditorInternal;
 [CustomEditor(typeof(ExampleScript))]
 public class ExampleScriptEditor : Editor
 {
+    [System.Obsolete]
+#pragma warning disable CS0809 // Obsolete member overrides non-obsolete member
     public override void OnInspectorGUI()
+#pragma warning restore CS0809 // Obsolete member overrides non-obsolete member
     {
         ExampleScript currentTarget = (ExampleScript)target;
 
