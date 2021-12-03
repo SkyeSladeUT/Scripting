@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0feef557f98b15c4abf1ec294d0a1d93, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  MaxCharactersPerLine: 0
+  scrollSpeed: 0
+  conversations:
+  - ConversationName: 
+    lines:
+    - CharacterName: 
+      LineType: 0
+      DialogueText: 
+      isTrigger: 0
+      TriggerName: 
+      isInteger: 0
+      IntegerName: 
+      IntegerNum: 0
+      isBool: 0
+      BoolName: 
+      BoolValue: 0

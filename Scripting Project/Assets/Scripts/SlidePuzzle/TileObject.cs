@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DigitalRuby.Tween;
 
 public class TileObject
 {
     private GameObject rotateTemp;
-    private QuaternionTween RotateTween01, RotateTween02, RotateTween03, RotateTween04;
     private Quaternion initRotation, rightRotation, leftRotation;
 
     private GameObject _gameObject;
@@ -38,22 +38,12 @@ public class TileObject
             rotateTemp.transform.Rotate(new Vector3(0, -40, 0), Space.Self);
             leftRotation = rotateTemp.transform.rotation;
             rotateTemp.SetActive(false);
-            RotateTween01 = new QuaternionTween((t) => { gameObject.transform.rotation = t.CurrentValue; }, (t) =>
-            {
-                RotateTween02.RunTween(gameObject, gameObject.transform.rotation, leftRotation, .1f, ScaleFunctions.Linear, EaseFunctions.EaseInOut);
-            });
-            RotateTween02 = new QuaternionTween((t) => { gameObject.transform.rotation = t.CurrentValue; }, (t) =>
-           {
-               RotateTween03.RunTween(gameObject, gameObject.transform.rotation, rightRotation, .1f, ScaleFunctions.Linear, EaseFunctions.EaseInOut);
-           });
-            RotateTween03 = new QuaternionTween((t) => { gameObject.transform.rotation = t.CurrentValue; }, (t) =>
-             {
-                 RotateTween04.RunTween(gameObject, gameObject.transform.rotation, initRotation, .05f, ScaleFunctions.Cubic, EaseFunctions.EaseOut);
-             });
-            RotateTween04 = new QuaternionTween((t) => { gameObject.transform.rotation = t.CurrentValue; }, (t) => {});
         }
-        RotateTween01.RunTween(gameObject, gameObject.transform.rotation, rightRotation, .05f, ScaleFunctions.Cubic, EaseFunctions.EaseIn);
 
+        gameObject.Tween(gameObject.name + "Wiggle", initRotation, rightRotation, .05f, TweenScaleFunctions.CubicEaseIn, (t) => { gameObject.transform.rotation = t.CurrentValue; })
+            .ContinueWith(new QuaternionTween().Setup(rightRotation, leftRotation, .1f, TweenScaleFunctions.Linear, (t) => { gameObject.transform.rotation = t.CurrentValue; }))
+            .ContinueWith(new QuaternionTween().Setup(leftRotation, rightRotation, .1f, TweenScaleFunctions.Linear, (t) => { gameObject.transform.rotation = t.CurrentValue; }))
+            .ContinueWith(new QuaternionTween().Setup(rightRotation, initRotation, .05f, TweenScaleFunctions.CubicEaseOut, (t) => { gameObject.transform.rotation = t.CurrentValue; }));
     }
 
 }

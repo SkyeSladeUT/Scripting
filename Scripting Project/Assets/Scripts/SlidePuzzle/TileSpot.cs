@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DigitalRuby.Tween;
 
 public class TileSpot
 {
@@ -19,7 +20,6 @@ public class TileSpot
         get { return _index; }
     }
 
-    private Vector3Tween _tileTween = new Vector3Tween();
 
     private TileTap _objectInSpot;
     public TileTap ObjectInSpot
@@ -30,9 +30,8 @@ public class TileSpot
             _objectInSpot = value;
             if (_objectInSpot != null)
             {
-                _tileTween.RunTween(gameObject, _objectInSpot.transform.position, transform.position, .25f, ScaleFunctions.Cubic, EaseFunctions.EaseInOut);
+                gameObject.Tween(gameObject.name + "Move", _objectInSpot.transform.position, transform.position, .25f, TweenScaleFunctions.CubicEaseInOut, (t)=> { _objectInSpot.transform.position = t.CurrentValue; });
                 _objectInSpot.transform.rotation = transform.rotation;
-                //_objectInSpot.transform.position = transform.position;
             }
         }
     }
@@ -59,10 +58,6 @@ public class TileSpot
         _index = index;
         _column = column;
         _row = row;
-        _tileTween.updateFunction = (t) =>
-        {
-            ObjectInSpot.transform.position = t.CurrentValue;
-        };
     }
 
     public override string ToString()
