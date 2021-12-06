@@ -17,9 +17,10 @@ MonoBehaviour:
   conversations:
   - ConversationName: 
     lines:
-    - CharacterName: 
-      LineType: 0
-      DialogueText: 
+    - LineName: 
+      CharacterName: 
+      LineType: 1
+      DialogueText: Dialogue Text
       isTrigger: 0
       TriggerName: 
       isInteger: 0
@@ -28,3 +29,97 @@ MonoBehaviour:
       isBool: 0
       BoolName: 
       BoolValue: 0
+      Choices:
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      GameObjectName: 
+      ScriptName: 
+      FunctionName: 
+    - LineName: 
+      CharacterName: 
+      LineType: 1
+      DialogueText: Dialogue Text
+      isTrigger: 0
+      TriggerName: 
+      isInteger: 0
+      IntegerName: 
+      IntegerNum: 0
+      isBool: 0
+      BoolName: 
+      BoolValue: 0
+      Choices:
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      GameObjectName: 
+      ScriptName: 
+      FunctionName: 
+    - LineName: 
+      CharacterName: 
+      LineType: 1
+      DialogueText: Dialogue Text
+      isTrigger: 0
+      TriggerName: 
+      isInteger: 0
+      IntegerName: 
+      IntegerNum: 0
+      isBool: 0
+      BoolName: 
+      BoolValue: 0
+      Choices:
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      GameObjectName: 
+      ScriptName: 
+      FunctionName: 
+  - ConversationName: 
+    lines:
+    - LineName: 
+      CharacterName: 
+      LineType: 1
+      DialogueText: Dialogue Text
+      isTrigger: 0
+      TriggerName: 
+      isInteger: 0
+      IntegerName: 
+      IntegerNum: 0
+      isBool: 0
+      BoolName: 
+      BoolValue: 0
+      Choices:
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      - LineName: 
+      GameObjectName: 
+      ScriptName: 
+      FunctionName: 
