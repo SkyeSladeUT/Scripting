@@ -8,8 +8,6 @@ namespace Dialogue
     [CreateAssetMenu(menuName = "Dialogue")]
     public class DialogueContainer : ScriptableObject
     {
-        public int MaxCharactersPerLine;
-        public float scrollSpeed;
         public List<Conversation> conversations;
 
         public Conversation this[string conversationName]

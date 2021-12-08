@@ -73,6 +73,10 @@ namespace Dialogue
                     #endregion
                     #region ANIMATION CASE
                     case LineTypes.Animation:
+                        var animTime = property.FindPropertyRelative("animationTime");
+                        var AnimTimeRect = new Rect(position.x, position.y + rectHeight, position.width, 21);
+                        rectHeight += 21;
+                        animTime.intValue = EditorGUI.IntField(AnimTimeRect, "Animation Length", animTime.intValue);
                         var isTrigger = property.FindPropertyRelative("isTrigger");
                         var IsTriggerTextRect = new Rect(position.x, position.y + rectHeight, position.width, 21);
                         rectHeight += 21;
@@ -194,6 +198,7 @@ namespace Dialogue
             public string DialogueText;
             #endregion
             #region ANIMATION VARIABLES
+            public float animationTime;
             public bool isTrigger;
             public string TriggerName;
             public bool isInteger;
