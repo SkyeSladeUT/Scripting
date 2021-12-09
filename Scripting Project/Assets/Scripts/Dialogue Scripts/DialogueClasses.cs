@@ -27,7 +27,7 @@ namespace Dialogue
 
         public enum LineTypes
         {
-            Dialogue, Choice, Script, Animation
+            Dialogue, Choice, Script, Animation, Audio
         }
 
 #if UNITY_EDITOR
@@ -62,13 +62,28 @@ namespace Dialogue
                 {
                     #region DIALOGUE CASE
                     case LineTypes.Dialogue:
+
+                        var ThoughtTextRect = new Rect(position.x, position.y + rectHeight, position.width, 21);
+                        rectHeight += 21;
+                        var thoughtBool = property.FindPropertyRelative("Thought");
+                        thoughtBool.boolValue = EditorGUI.Toggle(ThoughtTextRect, "Is Thought", thoughtBool.boolValue);
                         var DialogueTextRect = new Rect(position.x, position.y + rectHeight, position.width, 105);
                         rectHeight += 105;
                         var dialogueText = property.FindPropertyRelative("DialogueText");
                         var style = new GUIStyle(EditorStyles.textField);
                         style.wordWrap = true;
                         style.fixedHeight = 100;
-                        dialogueText.stringValue = EditorGUI.TextArea(DialogueTextRect, "Dialogue Text", style);
+                        dialogueText.stringValue = EditorGUI.TextArea(DialogueTextRect, dialogueText.stringValue, style);
+
+                        var ah = 21;
+                        var characterAudio = property.FindPropertyRelative("CharacterAudio");
+                        if (characterAudio.isExpanded)
+                        {
+                            ah += 60;
+                        }
+                        var CharacterAudioTextRect = new Rect(position.x, position.y + rectHeight, position.width, 21);
+                        rectHeight += ah;
+                        EditorGUI.PropertyField(CharacterAudioTextRect, characterAudio, true);
                         break;
                     #endregion
                     #region ANIMATION CASE
@@ -76,7 +91,7 @@ namespace Dialogue
                         var animTime = property.FindPropertyRelative("animationTime");
                         var AnimTimeRect = new Rect(position.x, position.y + rectHeight, position.width, 21);
                         rectHeight += 21;
-                        animTime.intValue = EditorGUI.IntField(AnimTimeRect, "Animation Length", animTime.intValue);
+                        animTime.floatValue = EditorGUI.FloatField(AnimTimeRect, "Animation Length", animTime.floatValue);
                         var isTrigger = property.FindPropertyRelative("isTrigger");
                         var IsTriggerTextRect = new Rect(position.x, position.y + rectHeight, position.width, 21);
                         rectHeight += 21;
@@ -129,18 +144,19 @@ namespace Dialogue
                     case LineTypes.Choice:
 
                         var choicesList = property.FindPropertyRelative("Choices");
-                        var height = 21;
+                        var height = 25;
                         if (choicesList.isExpanded)
                         {
+                            height += 50;
                             for (int i = 0; i < choicesList.arraySize; i++)
                             {
                                 if (choicesList.GetArrayElementAtIndex(i).isExpanded)
                                 {
-                                    height += 42;
+                                    height += 80;
                                 }
                                 else
                                 {
-                                    height += 21;
+                                    height += 25;
                                 }
                             }
                         }
@@ -158,14 +174,35 @@ namespace Dialogue
                         gameObjectName.stringValue = EditorGUI.TextField(GameObjectTextRect, "Game Object Name", gameObjectName.stringValue);
                         var ScriptTextRect = new Rect(position.x, position.y + rectHeight, position.width, 21);
                         rectHeight += 21;
-                        var scriptName = property.FindPropertyRelative("GameObjectName");
+                        var scriptName = property.FindPropertyRelative("ScriptName");
                         scriptName.stringValue = EditorGUI.TextField(ScriptTextRect, "Script Name", scriptName.stringValue);
                         var FunctionTextRect = new Rect(position.x, position.y + rectHeight, position.width, 21);
                         rectHeight += 21;
-                        var functionName = property.FindPropertyRelative("GameObjectName");
+                        var functionName = property.FindPropertyRelative("FunctionName");
                         functionName.stringValue = EditorGUI.TextField(FunctionTextRect, "Function Name", functionName.stringValue);
+                        var RunTimeTextRect = new Rect(position.x, position.y + rectHeight, position.width, 21);
+                        rectHeight += 21;
+                        var runTime = property.FindPropertyRelative("RunTime");
+                        runTime.floatValue = EditorGUI.FloatField(RunTimeTextRect, "Run Time", runTime.floatValue);
                         break;
-                        #endregion
+                    #endregion
+                    #region AUDIO CASE
+                    case LineTypes.Audio:
+                        var AudioTimeTextRect = new Rect(position.x, position.y + rectHeight, position.width, 21);
+                        rectHeight += 21;
+                        var audioTime = property.FindPropertyRelative("AudioTime");
+                        audioTime.floatValue = EditorGUI.FloatField(AudioTimeTextRect, "Audio Time", audioTime.floatValue);
+                        var aa = 21;
+                        var audio = property.FindPropertyRelative("CharacterAudio");
+                        if (audio.isExpanded)
+                        {
+                            aa += 60;
+                        }
+                        var AudioTextRect = new Rect(position.x, position.y + rectHeight, position.width, 21);
+                        rectHeight += aa;
+                        EditorGUI.PropertyField(AudioTextRect, audio, true);
+                        break;
+                    #endregion
                 }
 
                 var NextLineRect = new Rect(position.x, position.y + rectHeight, position.width, 21);
@@ -194,6 +231,8 @@ namespace Dialogue
             public string CharacterName;
             public LineTypes LineType;
             #region DIALOGUE VARIABLES
+            public Audio CharacterAudio;
+            public bool Thought;
             [TextArea(5,5)]
             public string DialogueText;
             #endregion
@@ -215,6 +254,10 @@ namespace Dialogue
             public string GameObjectName;
             public string ScriptName;
             public string FunctionName;
+            public float RunTime;
+            #endregion
+            #region AUDIO VARIABLES
+            public float AudioTime;
             #endregion
             public float height;
             public string NextLineName;
@@ -224,7 +267,16 @@ namespace Dialogue
         public class Choice
         {
             public string LineName;
+            public string ChoiceText;
             public bool chosen;
+        }
+
+        [Serializable]
+        public class Audio
+        {
+            public string Name;
+            public float Volume;
+            public bool Loop;
         }
     }
 }

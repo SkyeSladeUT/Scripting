@@ -8,6 +8,7 @@ namespace Dialogue
     [CreateAssetMenu(menuName = "Dialogue")]
     public class DialogueContainer : ScriptableObject
     {
+        public Color ChoiceColor;
         public List<Conversation> conversations;
 
         public Conversation this[string conversationName]
