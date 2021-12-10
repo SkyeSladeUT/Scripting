@@ -16,4 +16,17 @@ public class OrderedDrag : Drag_3D
         get { return _orderObject;}
         set { _orderObject = value; }
     }
+
+    private Vector3 _origPosition;
+
+    protected override void OnMouseDown()
+    {
+        _origPosition = transform.position;
+        base.OnMouseDown();
+    }
+
+    public void ResetPosition()
+    {
+        transform.position = _origPosition;
+    }
 }

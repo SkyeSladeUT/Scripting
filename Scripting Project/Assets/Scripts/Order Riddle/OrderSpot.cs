@@ -36,6 +36,11 @@ public class OrderSpot
         get { return _num; }
     }
 
+    public bool Filled
+    {
+        get { return _objectInSpot != null; }
+    }
+
     public OrderSpot(int num)
     {
         _num = num;

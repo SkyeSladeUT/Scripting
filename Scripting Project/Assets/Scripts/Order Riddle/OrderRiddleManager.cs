@@ -5,13 +5,13 @@ using UnityEngine;
 public class OrderRiddleManager : MonoBehaviour
 {
     public int NumberOfSpots;
-    public GameObject SpotPrefab;
     private List<GameObject> _orderSpots;
     private List<OrderedDrag> _draggables;
     public Grid_Layout_3D GridParent;
     public float CellSize = .1f;
     private OrderedGrid grid;
     public List<GameObject> DraggableObjects;
+    public GameObject OrderSpotPrefab;
 
     public void Initialize()
     {
@@ -19,13 +19,22 @@ public class OrderRiddleManager : MonoBehaviour
         _orderSpots = new List<GameObject>();
         for(int i = 0; i < NumberOfSpots; i++)
         {
-            GameObject temp = new GameObject("Ordered Spot: " + i);
-            _orderSpots.Add(temp);
-            temp.transform.parent = GridParent.transform;
-            BoxCollider col = temp.AddComponent<BoxCollider>();
-            col.size = new Vector3(CellSize, CellSize, CellSize);
-            col.isTrigger = true;
-            grid[i].gameObject = temp;
+            if (OrderSpotPrefab != null)
+            {
+                GameObject temp = Instantiate(OrderSpotPrefab, GridParent.transform);
+                _orderSpots.Add(temp);
+                grid[i].gameObject = temp;
+            }
+            else
+            {
+                GameObject temp = new GameObject("Ordered Spot: " + i);
+                _orderSpots.Add(temp);
+                temp.transform.parent = GridParent.transform;
+                BoxCollider col = temp.AddComponent<BoxCollider>();
+                col.size = new Vector3(CellSize, CellSize, CellSize);
+                col.isTrigger = true;
+                grid[i].gameObject = temp;
+            }
         }
         GridParent.FixedRowColumnCount = NumberOfSpots;
         GridParent.CellSize.x = CellSize;
@@ -43,5 +52,53 @@ public class OrderRiddleManager : MonoBehaviour
             drag.OrderObject = new OrderedObject(drag.gameObject);
             drag.OrderObject.Num = i;
         }
+    }
+
+    public void OnBeginDrag(DragEventArgs e)
+    {
+        foreach (var p in grid.OrderSpots)
+        {
+            if (p.Filled && (p.ObjectInSpot.name == e.draggable.gameObject.name))
+            {
+                p.ObjectInSpot = null;
+                break;
+            }
+        }
+    }
+
+    public void OnEndDrag(DragEventArgs e)
+    {
+        Debug.Log("End Drag: " + e.draggable.name);
+        OrderSpot spot = GetSpot(e.draggable.transform);
+        if (spot == null)
+        {
+            return;
+        }
+        if (spot.Filled)
+        {
+            OrderedDrag orderedObject;
+            if ((orderedObject = e.draggable as OrderedDrag) != null)
+            {
+                orderedObject.ResetPosition();
+            }
+            return;
+        }
+        spot.ObjectInSpot = e.draggable as OrderedDrag;
+    }
+
+    public OrderSpot GetSpot(Transform obj)
+    {
+        RaycastHit[] hits = Physics.RaycastAll(obj.transform.position, Camera.main.transform.forward, 10);
+        for (int i = 0; i < hits.Length; i++)
+        {
+            foreach (var p in grid.OrderSpots)
+            {
+                if (p.gameObject.name == hits[i].collider.name)
+                {
+                    return p;
+                }
+            }
+        }
+        return null;
     }
 }
