@@ -41,6 +41,7 @@ public class OrderRiddleManager : MonoBehaviour
             }
             _draggables.Add(drag);
             drag.OrderObject = new OrderedObject(drag.gameObject);
+            drag.OrderObject.Num = i;
         }
     }
 }
