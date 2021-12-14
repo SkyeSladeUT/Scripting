@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class OrderRiddleManager : MonoBehaviour
 {
     public int NumberOfSpots;
@@ -12,6 +12,8 @@ public class OrderRiddleManager : MonoBehaviour
     private OrderedGrid grid;
     public List<GameObject> DraggableObjects;
     public GameObject OrderSpotPrefab;
+    public UnityEvent OnComplete;
+    public float ZTransform;
 
     public void Initialize()
     {
@@ -31,7 +33,7 @@ public class OrderRiddleManager : MonoBehaviour
                 _orderSpots.Add(temp);
                 temp.transform.parent = GridParent.transform;
                 BoxCollider col = temp.AddComponent<BoxCollider>();
-                col.size = new Vector3(CellSize, CellSize, CellSize);
+                col.size = new Vector3(CellSize, CellSize, .01f);
                 col.isTrigger = true;
                 grid[i].gameObject = temp;
             }
@@ -51,6 +53,9 @@ public class OrderRiddleManager : MonoBehaviour
             _draggables.Add(drag);
             drag.OrderObject = new OrderedObject(drag.gameObject);
             drag.OrderObject.Num = i;
+            drag.onBeginDrag = OnBeginDrag;
+            drag.onEndDrag = OnEndDrag;
+            drag.ZTransform = ZTransform;
         }
     }
 
@@ -68,7 +73,6 @@ public class OrderRiddleManager : MonoBehaviour
 
     public void OnEndDrag(DragEventArgs e)
     {
-        Debug.Log("End Drag: " + e.draggable.name);
         OrderSpot spot = GetSpot(e.draggable.transform);
         if (spot == null)
         {
@@ -84,6 +88,12 @@ public class OrderRiddleManager : MonoBehaviour
             return;
         }
         spot.ObjectInSpot = e.draggable as OrderedDrag;
+        CheckOrder();
+    }
+
+    public void OnFinishPuzzle()
+    {
+        OnComplete.Invoke();
     }
 
     public OrderSpot GetSpot(Transform obj)
@@ -100,5 +110,17 @@ public class OrderRiddleManager : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public bool CheckOrder()
+    {
+        Debug.Log("Check Order");
+        foreach(var o in grid.OrderSpots)
+        {
+            if (!o.CorrectObject())
+                return false;
+        }
+        OnFinishPuzzle();
+        return true;
     }
 }

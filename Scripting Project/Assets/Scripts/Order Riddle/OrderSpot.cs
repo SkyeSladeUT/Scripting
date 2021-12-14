@@ -50,6 +50,7 @@ public class OrderSpot
     {
         if(_objectInSpot != null)
         {
+            Debug.Log("Order Spot: " + Num + "  Object Num: " + _objectInSpot.CorrectOrder);
             if(_objectInSpot.CorrectOrder == Num)
             {
                 return true;

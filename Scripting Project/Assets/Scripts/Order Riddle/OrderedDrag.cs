@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class OrderedDrag : Drag_3D
 {
-    private int _correctOrder;
     public int CorrectOrder
     {
-        get { return _correctOrder; }
+        get { return OrderObject.Num; }
     }
-
     private OrderedObject _orderObject;
     public OrderedObject OrderObject
     {

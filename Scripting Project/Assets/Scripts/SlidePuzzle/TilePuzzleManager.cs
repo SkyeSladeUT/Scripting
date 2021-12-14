@@ -61,6 +61,7 @@ public class TilePuzzleManager : MonoBehaviour
         if (tappedSpot == null)
             return;
         grid.MoveTile(tappedSpot, e.tapped);
+        CheckPlacement();
     }
 
     public TileSpot GetSpot(Transform obj)
@@ -77,6 +78,21 @@ public class TilePuzzleManager : MonoBehaviour
             }
         }
         return null;
+    }
+    public bool CheckPlacement()
+    {
+        foreach (var s in grid.TileSpots)
+        {
+            if (s.Index == 8)
+            {
+                continue;
+            }
+            else if (!s.Filled || s.ObjectInSpot.TileNum != s.Index + 1)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
 }

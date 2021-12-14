@@ -79,7 +79,6 @@ public class TileGrid
             {
                 spot.ObjectInSpot = null;
                 newSpot.ObjectInSpot = tileObj;
-                CheckPlacement();
                 return;
             }
         }
@@ -90,7 +89,6 @@ public class TileGrid
             {
                 spot.ObjectInSpot = null;
                 newSpot.ObjectInSpot = tileObj;
-                CheckPlacement();
                 return;
             }
         }
@@ -101,7 +99,6 @@ public class TileGrid
             {
                 spot.ObjectInSpot = null;
                 newSpot.ObjectInSpot = tileObj;
-                CheckPlacement();
                 return;
             }
         }
@@ -112,27 +109,12 @@ public class TileGrid
             {
                 spot.ObjectInSpot = null;
                 newSpot.ObjectInSpot = tileObj;
-                CheckPlacement();
                 return;
             }
         }
         tileObj.Tile.Wiggle();
     }
 
-    public bool CheckPlacement()
-    {
-        foreach(var s in TileSpots)
-        {
-            if(s.Index == 8)
-            {
-                continue;
-            }
-            else if(!s.Filled || s.ObjectInSpot.TileNum != s.Index+1)
-            {
-                return false;
-            }
-        }
-        return true;
-    }
+
 
 }
