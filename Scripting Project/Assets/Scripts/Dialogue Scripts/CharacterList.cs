@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-namespace Dialogue
+namespace GameManagement
 {
     [CreateAssetMenu(menuName = "Character List")]
     public class CharacterList : ScriptableObject

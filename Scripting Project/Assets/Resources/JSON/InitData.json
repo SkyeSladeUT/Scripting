@@ -1,0 +1,60 @@
+{
+    "currentScene": 0,
+    "Scenes": [
+        {
+            "SceneName": "Pipes Testing",
+            "SceneIndex": 0,
+            "SceneObjects": [
+                {
+                    "objectName": "SaveObject01",
+                    "active": false,
+                    "position": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                },
+                {
+                    "objectName": "SaveObject02",
+                    "active": false,
+                    "position": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    },
+                    "rotation": {
+                        "x": 0.0,
+                        "y": 0.0,
+                        "z": 0.0
+                    }
+                }
+            ]
+        }
+    ],
+    "inventory": {
+        "items": [
+            {
+                "name": "Test Object 01",
+                "quantity": 0,
+                "description": "This is the description for the first test object",
+                "itemType": "Test",
+                "spriteAtlasName": "Numbers Atlas",
+                "spriteName": "in 0"
+            },
+            {
+                "name": "Test Object 02",
+                "quantity": 0,
+                "description": "This is the description for the second test object",
+                "itemType": "Test",
+                "spriteAtlasName": "Numbers Atlas",
+                "spriteName": "in 1"
+            }
+        ]
+    },
+    "options": null
+}

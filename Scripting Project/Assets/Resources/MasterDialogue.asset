@@ -1,0 +1,368 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0feef557f98b15c4abf1ec294d0a1d93, type: 3}
+  m_Name: MasterDialogue
+  m_EditorClassIdentifier: 
+  ChoiceColor: {r: 0.9528302, g: 0.76530725, b: 0, a: 1}
+  conversations:
+  - ConversationName: TestConversation
+    Lines:
+    - LineName: Line01
+      CharacterName: Player
+      LineType: 0
+      CharacterAudio:
+        Name: Chicken
+        Volume: 0.1
+        Loop: 1
+      Thought: 0
+      DialogueText: 'Test Dialogue. Just seeing if this runs correctly.
+
+        This
+        should be a new dialogue set... which is longer than the previous one.
+
+        Here''s
+        another'
+      animationTime: 0
+      isTrigger: 0
+      TriggerName: 
+      isInteger: 0
+      IntegerName: 
+      IntegerNum: 0
+      isBool: 0
+      BoolName: 
+      BoolValue: 0
+      Choices: []
+      GameObjectName: 
+      ScriptName: 
+      FunctionName: 
+      RunTime: 0
+      AudioTime: 0
+      height: 312
+      NextLineName: Line02
+    - LineName: Line02
+      CharacterName: NPC
+      LineType: 0
+      CharacterAudio:
+        Name: 
+        Volume: 0
+        Loop: 0
+      Thought: 0
+      DialogueText: 'NPC Dialogue. This should be a different color than the Test
+        dialogue.
+
+        This Character is an NPC.'
+      animationTime: 0
+      isTrigger: 0
+      TriggerName: 
+      isInteger: 0
+      IntegerName: 
+      IntegerNum: 0
+      isBool: 0
+      BoolName: 
+      BoolValue: 0
+      Choices: []
+      GameObjectName: 
+      ScriptName: 
+      FunctionName: 
+      RunTime: 0
+      AudioTime: 0
+      height: 312
+      NextLineName: Line03
+    - LineName: Line03
+      CharacterName: Player
+      LineType: 2
+      CharacterAudio:
+        Name: 
+        Volume: 0
+        Loop: 0
+      Thought: 0
+      DialogueText: 'NPC Dialogue. This should be a different color than the Test
+        dialogue.
+
+        This Character is an NPC.'
+      animationTime: 0
+      isTrigger: 0
+      TriggerName: 
+      isInteger: 0
+      IntegerName: 
+      IntegerNum: 0
+      isBool: 0
+      BoolName: 
+      BoolValue: 0
+      Choices: []
+      GameObjectName: ScriptTestObject
+      ScriptName: EventScript
+      FunctionName: Call
+      RunTime: 0.1
+      AudioTime: 0
+      height: 189
+      NextLineName: Line04
+    - LineName: Line04
+      CharacterName: Player
+      LineType: 3
+      CharacterAudio:
+        Name: 
+        Volume: 0
+        Loop: 0
+      Thought: 0
+      DialogueText: 'NPC Dialogue. This should be a different color than the Test
+        dialogue.
+
+        This Character is an NPC.'
+      animationTime: 0.5
+      isTrigger: 1
+      TriggerName: TriggerTest
+      isInteger: 1
+      IntegerName: IntTest
+      IntegerNum: 1
+      isBool: 1
+      BoolName: BoolTest
+      BoolValue: 1
+      Choices: []
+      GameObjectName: ScriptTestObject
+      ScriptName: EventScript
+      FunctionName: Call
+      RunTime: 1
+      AudioTime: 0
+      height: 294
+      NextLineName: Line05
+    - LineName: Line05
+      CharacterName: Player
+      LineType: 1
+      CharacterAudio:
+        Name: 
+        Volume: 0
+        Loop: 0
+      Thought: 0
+      DialogueText: 'NPC Dialogue. This should be a different color than the Test
+        dialogue.
+
+        This Character is an NPC.'
+      animationTime: 0.5
+      isTrigger: 1
+      TriggerName: TriggerTest
+      isInteger: 1
+      IntegerName: IntTest
+      IntegerNum: 1
+      isBool: 1
+      BoolName: BoolTest
+      BoolValue: 1
+      Choices:
+      - LineName: Choice01
+        ChoiceText: Choice 1
+        chosen: 0
+      - LineName: Choice02
+        ChoiceText: Choice 2
+        chosen: 0
+      - LineName: Choice03
+        ChoiceText: Choice 3
+        chosen: 0
+      - LineName: Choice04
+        ChoiceText: Choice 4
+        chosen: 0
+      GameObjectName: ScriptTestObject
+      ScriptName: EventScript
+      FunctionName: Call
+      RunTime: 1
+      AudioTime: 0
+      height: 500
+      NextLineName: Choice01
+    - LineName: Choice01
+      CharacterName: Player
+      LineType: 0
+      CharacterAudio:
+        Name: 
+        Volume: 0
+        Loop: 0
+      Thought: 1
+      DialogueText: Choice 01 Text
+      animationTime: 0.5
+      isTrigger: 1
+      TriggerName: TriggerTest
+      isInteger: 1
+      IntegerName: IntTest
+      IntegerNum: 1
+      isBool: 1
+      BoolName: BoolTest
+      BoolValue: 1
+      Choices:
+      - LineName: Choice01
+        ChoiceText: Choice 1
+        chosen: 0
+      - LineName: Choice02
+        ChoiceText: Choice 2
+        chosen: 0
+      - LineName: Choice03
+        ChoiceText: Choice 3
+        chosen: 0
+      - LineName: Choice04
+        ChoiceText: Choice 4
+        chosen: 0
+      GameObjectName: ScriptTestObject
+      ScriptName: EventScript
+      FunctionName: Call
+      RunTime: 1
+      AudioTime: 0
+      height: 252
+      NextLineName: 
+    - LineName: Choice02
+      CharacterName: Player
+      LineType: 0
+      CharacterAudio:
+        Name: 
+        Volume: 0
+        Loop: 0
+      Thought: 0
+      DialogueText: Choice 02 Text
+      animationTime: 0.5
+      isTrigger: 1
+      TriggerName: TriggerTest
+      isInteger: 1
+      IntegerName: IntTest
+      IntegerNum: 1
+      isBool: 1
+      BoolName: BoolTest
+      BoolValue: 1
+      Choices:
+      - LineName: Choice01
+        ChoiceText: Choice 1
+        chosen: 0
+      - LineName: Choice02
+        ChoiceText: Choice 2
+        chosen: 0
+      - LineName: Choice03
+        ChoiceText: Choice 3
+        chosen: 0
+      - LineName: Choice04
+        ChoiceText: Choice 4
+        chosen: 0
+      GameObjectName: ScriptTestObject
+      ScriptName: EventScript
+      FunctionName: Call
+      RunTime: 1
+      AudioTime: 0
+      height: 252
+      NextLineName: 
+    - LineName: Choice03
+      CharacterName: Player
+      LineType: 0
+      CharacterAudio:
+        Name: 
+        Volume: 0
+        Loop: 0
+      Thought: 0
+      DialogueText: Choice 03 Text
+      animationTime: 0.5
+      isTrigger: 1
+      TriggerName: TriggerTest
+      isInteger: 1
+      IntegerName: IntTest
+      IntegerNum: 1
+      isBool: 1
+      BoolName: BoolTest
+      BoolValue: 1
+      Choices:
+      - LineName: Choice01
+        ChoiceText: Choice 1
+        chosen: 0
+      - LineName: Choice02
+        ChoiceText: Choice 2
+        chosen: 0
+      - LineName: Choice03
+        ChoiceText: Choice 3
+        chosen: 0
+      - LineName: Choice04
+        ChoiceText: Choice 4
+        chosen: 0
+      GameObjectName: ScriptTestObject
+      ScriptName: EventScript
+      FunctionName: Call
+      RunTime: 1
+      AudioTime: 0
+      height: 252
+      NextLineName: 
+    - LineName: Choice04
+      CharacterName: Player
+      LineType: 0
+      CharacterAudio:
+        Name: 
+        Volume: 0
+        Loop: 0
+      Thought: 0
+      DialogueText: Choice 04 Text
+      animationTime: 0.5
+      isTrigger: 1
+      TriggerName: TriggerTest
+      isInteger: 1
+      IntegerName: IntTest
+      IntegerNum: 1
+      isBool: 1
+      BoolName: BoolTest
+      BoolValue: 1
+      Choices:
+      - LineName: Choice01
+        ChoiceText: Choice 1
+        chosen: 0
+      - LineName: Choice02
+        ChoiceText: Choice 2
+        chosen: 0
+      - LineName: Choice03
+        ChoiceText: Choice 3
+        chosen: 0
+      - LineName: Choice04
+        ChoiceText: Choice 4
+        chosen: 0
+      GameObjectName: ScriptTestObject
+      ScriptName: EventScript
+      FunctionName: Call
+      RunTime: 1
+      AudioTime: 0
+      height: 252
+      NextLineName: Audio01
+    - LineName: Audio01
+      CharacterName: Player
+      LineType: 4
+      CharacterAudio:
+        Name: explosion
+        Volume: 0.25
+        Loop: 0
+      Thought: 0
+      DialogueText: Choice 04 Text
+      animationTime: 0.5
+      isTrigger: 1
+      TriggerName: TriggerTest
+      isInteger: 1
+      IntegerName: IntTest
+      IntegerNum: 1
+      isBool: 1
+      BoolName: BoolTest
+      BoolValue: 1
+      Choices:
+      - LineName: Choice01
+        ChoiceText: Choice 1
+        chosen: 0
+      - LineName: Choice02
+        ChoiceText: Choice 2
+        chosen: 0
+      - LineName: Choice03
+        ChoiceText: Choice 3
+        chosen: 0
+      - LineName: Choice04
+        ChoiceText: Choice 4
+        chosen: 0
+      GameObjectName: ScriptTestObject
+      ScriptName: EventScript
+      FunctionName: Call
+      RunTime: 1
+      AudioTime: 0.5
+      height: 207
+      NextLineName: 

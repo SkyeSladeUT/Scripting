@@ -1,8 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
-using static Dialogue.DialogueClasses;
 
-namespace Dialogue
+namespace GameManagement
 {
     [SerializeField]
     [CreateAssetMenu(menuName = "Dialogue")]
