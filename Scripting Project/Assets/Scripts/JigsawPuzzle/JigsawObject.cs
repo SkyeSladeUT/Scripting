@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JigsawObject : MonoBehaviour
+public class JigsawObject
 {
-    private JigsawGrab _grab;
-    public JigsawGrab Grab;
+    public bool CorrectPlacement;
 
 }

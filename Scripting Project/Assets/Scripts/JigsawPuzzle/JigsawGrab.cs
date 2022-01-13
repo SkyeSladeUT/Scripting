@@ -8,14 +8,14 @@ public class JigsawGrab : Drag_3D
     private float clickTime;
     private float minDragTime = .1f;
     private bool mouseDown = false;
-    [Tooltip("Type of side present (0=side, 1=inward, 2=outward)")]
-    public int topSide, rightSide, leftSide, bottomSide;
+    public JigsawPieceCollider topSide, rightSide, leftSide, bottomSide;
     private GameObject rotateTemp;
 
     private JigsawObject _jigsaw;
     public JigsawObject JigsawPiece
     {
         get { return _jigsaw; }
+        set { _jigsaw = value; }
     }
 
     private JigsawPieceCollider _top, _right, _left, _bottom;
@@ -62,11 +62,11 @@ public class JigsawGrab : Drag_3D
 
     private void RotatePiece()
     {
-        var temp = topSide;
-        topSide = leftSide;
-        leftSide = bottomSide;
-        bottomSide = rightSide;
-        rightSide = temp;
+        var temp = topSide.Side;
+        topSide.Side = leftSide.Side;
+        leftSide.Side = bottomSide.Side;
+        bottomSide.Side = rightSide.Side;
+        rightSide.Side = temp;
         if(rotateTemp == null)
         {
             rotateTemp = new GameObject();

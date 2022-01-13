@@ -4,5 +4,14 @@ using UnityEngine;
 
 public class JigsawManager : MonoBehaviour
 {
+    public List<JigsawGrab> pieces;
+
+    public void Initialize()
+    {
+        foreach(var p in pieces)
+        {
+             
+        }
+    }
 
 }
