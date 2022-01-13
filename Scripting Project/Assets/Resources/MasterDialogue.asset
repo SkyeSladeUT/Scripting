@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0feef557f98b15c4abf1ec294d0a1d93, type: 3}
   m_Name: MasterDialogue
   m_EditorClassIdentifier: 
-  ChoiceColor: {r: 0.9528302, g: 0.76530725, b: 0, a: 1}
+  color:
+    r: 0.8980392
+    g: 0.68281674
+    b: 0
+    a: 1
   conversations:
   - ConversationName: TestConversation
     Lines:

@@ -1,13 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace GameManagement
 {
-    [SerializeField]
+    [Serializable]
     [CreateAssetMenu(menuName = "Dialogue")]
     public class DialogueContainer : ScriptableObject
     {
-        public Color ChoiceColor;
+        public SColor color;
         public List<Conversation> conversations;
 
         public Conversation this[string conversationName]

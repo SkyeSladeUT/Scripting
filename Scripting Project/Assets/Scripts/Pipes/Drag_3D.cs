@@ -39,7 +39,7 @@ public class Drag_3D : MonoBehaviour
 
     }
 
-    void OnMouseDrag()
+    protected virtual void OnMouseDrag()
     {
         transform.position = GetMouseAsWorldPoint() + _offset;
         Vector3 localz = transform.localPosition;
@@ -47,7 +47,7 @@ public class Drag_3D : MonoBehaviour
         transform.localPosition = localz;
     }
 
-    private void OnMouseUp()
+    protected virtual void OnMouseUp()
     {
         onEndDrag?.Invoke(new DragEventArgs(this));
     }

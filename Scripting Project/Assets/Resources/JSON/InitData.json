@@ -36,7 +36,7 @@
             ]
         }
     ],
-    "inventory": {
+    "masterInventory": {
         "items": [
             {
                 "name": "Test Object 01",
@@ -54,7 +54,445 @@
                 "spriteAtlasName": "Numbers Atlas",
                 "spriteName": "in 1"
             }
-        ]
+        ],
+        "name": "MasterInventory",
+        "hideFlags": 0
     },
-    "options": null
+    "inventory": null,
+    "options": null,
+    "dialogues": {
+        "color": {
+            "r": 0.8980392,
+            "g": 0.682816744,
+            "b": 0.0,
+            "a": 1.0
+        },
+        "conversations": [
+            {
+                "ConversationName": "TestConversation",
+                "Lines": [
+                    {
+                        "LineName": "Line01",
+                        "CharacterName": "Player",
+                        "LineType": 0,
+                        "CharacterAudio": {
+                            "Name": "Chicken",
+                            "Volume": 0.1,
+                            "Loop": true
+                        },
+                        "Thought": false,
+                        "DialogueText": "Test Dialogue. Just seeing if this runs correctly.\nThis should be a new dialogue set... which is longer than the previous one.\nHere's another",
+                        "animationTime": 0.0,
+                        "isTrigger": false,
+                        "TriggerName": "",
+                        "isInteger": false,
+                        "IntegerName": "",
+                        "IntegerNum": 0,
+                        "isBool": false,
+                        "BoolName": "",
+                        "BoolValue": false,
+                        "Choices": [],
+                        "GameObjectName": "",
+                        "ScriptName": "",
+                        "FunctionName": "",
+                        "RunTime": 0.0,
+                        "AudioTime": 0.0,
+                        "height": 312.0,
+                        "NextLineName": "Line02"
+                    },
+                    {
+                        "LineName": "Line02",
+                        "CharacterName": "NPC",
+                        "LineType": 0,
+                        "CharacterAudio": {
+                            "Name": "",
+                            "Volume": 0.0,
+                            "Loop": false
+                        },
+                        "Thought": false,
+                        "DialogueText": "NPC Dialogue. This should be a different color than the Test dialogue.\nThis Character is an NPC.",
+                        "animationTime": 0.0,
+                        "isTrigger": false,
+                        "TriggerName": "",
+                        "isInteger": false,
+                        "IntegerName": "",
+                        "IntegerNum": 0,
+                        "isBool": false,
+                        "BoolName": "",
+                        "BoolValue": false,
+                        "Choices": [],
+                        "GameObjectName": "",
+                        "ScriptName": "",
+                        "FunctionName": "",
+                        "RunTime": 0.0,
+                        "AudioTime": 0.0,
+                        "height": 312.0,
+                        "NextLineName": "Line03"
+                    },
+                    {
+                        "LineName": "Line03",
+                        "CharacterName": "Player",
+                        "LineType": 2,
+                        "CharacterAudio": {
+                            "Name": "",
+                            "Volume": 0.0,
+                            "Loop": false
+                        },
+                        "Thought": false,
+                        "DialogueText": "NPC Dialogue. This should be a different color than the Test dialogue.\nThis Character is an NPC.",
+                        "animationTime": 0.0,
+                        "isTrigger": false,
+                        "TriggerName": "",
+                        "isInteger": false,
+                        "IntegerName": "",
+                        "IntegerNum": 0,
+                        "isBool": false,
+                        "BoolName": "",
+                        "BoolValue": false,
+                        "Choices": [],
+                        "GameObjectName": "ScriptTestObject",
+                        "ScriptName": "EventScript",
+                        "FunctionName": "Call",
+                        "RunTime": 0.1,
+                        "AudioTime": 0.0,
+                        "height": 189.0,
+                        "NextLineName": "Line04"
+                    },
+                    {
+                        "LineName": "Line04",
+                        "CharacterName": "Player",
+                        "LineType": 3,
+                        "CharacterAudio": {
+                            "Name": "",
+                            "Volume": 0.0,
+                            "Loop": false
+                        },
+                        "Thought": false,
+                        "DialogueText": "NPC Dialogue. This should be a different color than the Test dialogue.\nThis Character is an NPC.",
+                        "animationTime": 0.5,
+                        "isTrigger": true,
+                        "TriggerName": "TriggerTest",
+                        "isInteger": true,
+                        "IntegerName": "IntTest",
+                        "IntegerNum": 1,
+                        "isBool": true,
+                        "BoolName": "BoolTest",
+                        "BoolValue": true,
+                        "Choices": [],
+                        "GameObjectName": "ScriptTestObject",
+                        "ScriptName": "EventScript",
+                        "FunctionName": "Call",
+                        "RunTime": 1.0,
+                        "AudioTime": 0.0,
+                        "height": 294.0,
+                        "NextLineName": "Line05"
+                    },
+                    {
+                        "LineName": "Line05",
+                        "CharacterName": "Player",
+                        "LineType": 1,
+                        "CharacterAudio": {
+                            "Name": "",
+                            "Volume": 0.0,
+                            "Loop": false
+                        },
+                        "Thought": false,
+                        "DialogueText": "NPC Dialogue. This should be a different color than the Test dialogue.\nThis Character is an NPC.",
+                        "animationTime": 0.5,
+                        "isTrigger": true,
+                        "TriggerName": "TriggerTest",
+                        "isInteger": true,
+                        "IntegerName": "IntTest",
+                        "IntegerNum": 1,
+                        "isBool": true,
+                        "BoolName": "BoolTest",
+                        "BoolValue": true,
+                        "Choices": [
+                            {
+                                "LineName": "Choice01",
+                                "ChoiceText": "Choice 1",
+                                "chosen": false
+                            },
+                            {
+                                "LineName": "Choice02",
+                                "ChoiceText": "Choice 2",
+                                "chosen": false
+                            },
+                            {
+                                "LineName": "Choice03",
+                                "ChoiceText": "Choice 3",
+                                "chosen": false
+                            },
+                            {
+                                "LineName": "Choice04",
+                                "ChoiceText": "Choice 4",
+                                "chosen": false
+                            }
+                        ],
+                        "GameObjectName": "ScriptTestObject",
+                        "ScriptName": "EventScript",
+                        "FunctionName": "Call",
+                        "RunTime": 1.0,
+                        "AudioTime": 0.0,
+                        "height": 500.0,
+                        "NextLineName": "Choice01"
+                    },
+                    {
+                        "LineName": "Choice01",
+                        "CharacterName": "Player",
+                        "LineType": 0,
+                        "CharacterAudio": {
+                            "Name": "",
+                            "Volume": 0.0,
+                            "Loop": false
+                        },
+                        "Thought": true,
+                        "DialogueText": "Choice 01 Text",
+                        "animationTime": 0.5,
+                        "isTrigger": true,
+                        "TriggerName": "TriggerTest",
+                        "isInteger": true,
+                        "IntegerName": "IntTest",
+                        "IntegerNum": 1,
+                        "isBool": true,
+                        "BoolName": "BoolTest",
+                        "BoolValue": true,
+                        "Choices": [
+                            {
+                                "LineName": "Choice01",
+                                "ChoiceText": "Choice 1",
+                                "chosen": false
+                            },
+                            {
+                                "LineName": "Choice02",
+                                "ChoiceText": "Choice 2",
+                                "chosen": false
+                            },
+                            {
+                                "LineName": "Choice03",
+                                "ChoiceText": "Choice 3",
+                                "chosen": false
+                            },
+                            {
+                                "LineName": "Choice04",
+                                "ChoiceText": "Choice 4",
+                                "chosen": false
+                            }
+                        ],
+                        "GameObjectName": "ScriptTestObject",
+                        "ScriptName": "EventScript",
+                        "FunctionName": "Call",
+                        "RunTime": 1.0,
+                        "AudioTime": 0.0,
+                        "height": 252.0,
+                        "NextLineName": ""
+                    },
+                    {
+                        "LineName": "Choice02",
+                        "CharacterName": "Player",
+                        "LineType": 0,
+                        "CharacterAudio": {
+                            "Name": "",
+                            "Volume": 0.0,
+                            "Loop": false
+                        },
+                        "Thought": false,
+                        "DialogueText": "Choice 02 Text",
+                        "animationTime": 0.5,
+                        "isTrigger": true,
+                        "TriggerName": "TriggerTest",
+                        "isInteger": true,
+                        "IntegerName": "IntTest",
+                        "IntegerNum": 1,
+                        "isBool": true,
+                        "BoolName": "BoolTest",
+                        "BoolValue": true,
+                        "Choices": [
+                            {
+                                "LineName": "Choice01",
+                                "ChoiceText": "Choice 1",
+                                "chosen": false
+                            },
+                            {
+                                "LineName": "Choice02",
+                                "ChoiceText": "Choice 2",
+                                "chosen": false
+                            },
+                            {
+                                "LineName": "Choice03",
+                                "ChoiceText": "Choice 3",
+                                "chosen": false
+                            },
+                            {
+                                "LineName": "Choice04",
+                                "ChoiceText": "Choice 4",
+                                "chosen": false
+                            }
+                        ],
+                        "GameObjectName": "ScriptTestObject",
+                        "ScriptName": "EventScript",
+                        "FunctionName": "Call",
+                        "RunTime": 1.0,
+                        "AudioTime": 0.0,
+                        "height": 252.0,
+                        "NextLineName": ""
+                    },
+                    {
+                        "LineName": "Choice03",
+                        "CharacterName": "Player",
+                        "LineType": 0,
+                        "CharacterAudio": {
+                            "Name": "",
+                            "Volume": 0.0,
+                            "Loop": false
+                        },
+                        "Thought": false,
+                        "DialogueText": "Choice 03 Text",
+                        "animationTime": 0.5,
+                        "isTrigger": true,
+                        "TriggerName": "TriggerTest",
+                        "isInteger": true,
+                        "IntegerName": "IntTest",
+                        "IntegerNum": 1,
+                        "isBool": true,
+                        "BoolName": "BoolTest",
+                        "BoolValue": true,
+                        "Choices": [
+                            {
+                                "LineName": "Choice01",
+                                "ChoiceText": "Choice 1",
+                                "chosen": false
+                            },
+                            {
+                                "LineName": "Choice02",
+                                "ChoiceText": "Choice 2",
+                                "chosen": false
+                            },
+                            {
+                                "LineName": "Choice03",
+                                "ChoiceText": "Choice 3",
+                                "chosen": false
+                            },
+                            {
+                                "LineName": "Choice04",
+                                "ChoiceText": "Choice 4",
+                                "chosen": false
+                            }
+                        ],
+                        "GameObjectName": "ScriptTestObject",
+                        "ScriptName": "EventScript",
+                        "FunctionName": "Call",
+                        "RunTime": 1.0,
+                        "AudioTime": 0.0,
+                        "height": 252.0,
+                        "NextLineName": ""
+                    },
+                    {
+                        "LineName": "Choice04",
+                        "CharacterName": "Player",
+                        "LineType": 0,
+                        "CharacterAudio": {
+                            "Name": "",
+                            "Volume": 0.0,
+                            "Loop": false
+                        },
+                        "Thought": false,
+                        "DialogueText": "Choice 04 Text",
+                        "animationTime": 0.5,
+                        "isTrigger": true,
+                        "TriggerName": "TriggerTest",
+                        "isInteger": true,
+                        "IntegerName": "IntTest",
+                        "IntegerNum": 1,
+                        "isBool": true,
+                        "BoolName": "BoolTest",
+                        "BoolValue": true,
+                        "Choices": [
+                            {
+                                "LineName": "Choice01",
+                                "ChoiceText": "Choice 1",
+                                "chosen": false
+                            },
+                            {
+                                "LineName": "Choice02",
+                                "ChoiceText": "Choice 2",
+                                "chosen": false
+                            },
+                            {
+                                "LineName": "Choice03",
+                                "ChoiceText": "Choice 3",
+                                "chosen": false
+                            },
+                            {
+                                "LineName": "Choice04",
+                                "ChoiceText": "Choice 4",
+                                "chosen": false
+                            }
+                        ],
+                        "GameObjectName": "ScriptTestObject",
+                        "ScriptName": "EventScript",
+                        "FunctionName": "Call",
+                        "RunTime": 1.0,
+                        "AudioTime": 0.0,
+                        "height": 252.0,
+                        "NextLineName": "Audio01"
+                    },
+                    {
+                        "LineName": "Audio01",
+                        "CharacterName": "Player",
+                        "LineType": 4,
+                        "CharacterAudio": {
+                            "Name": "explosion",
+                            "Volume": 0.25,
+                            "Loop": false
+                        },
+                        "Thought": false,
+                        "DialogueText": "Choice 04 Text",
+                        "animationTime": 0.5,
+                        "isTrigger": true,
+                        "TriggerName": "TriggerTest",
+                        "isInteger": true,
+                        "IntegerName": "IntTest",
+                        "IntegerNum": 1,
+                        "isBool": true,
+                        "BoolName": "BoolTest",
+                        "BoolValue": true,
+                        "Choices": [
+                            {
+                                "LineName": "Choice01",
+                                "ChoiceText": "Choice 1",
+                                "chosen": false
+                            },
+                            {
+                                "LineName": "Choice02",
+                                "ChoiceText": "Choice 2",
+                                "chosen": false
+                            },
+                            {
+                                "LineName": "Choice03",
+                                "ChoiceText": "Choice 3",
+                                "chosen": false
+                            },
+                            {
+                                "LineName": "Choice04",
+                                "ChoiceText": "Choice 4",
+                                "chosen": false
+                            }
+                        ],
+                        "GameObjectName": "ScriptTestObject",
+                        "ScriptName": "EventScript",
+                        "FunctionName": "Call",
+                        "RunTime": 1.0,
+                        "AudioTime": 0.5,
+                        "height": 207.0,
+                        "NextLineName": ""
+                    }
+                ]
+            }
+        ],
+        "name": "MasterDialogue",
+        "hideFlags": 0
+    },
+    "name": "GameData",
+    "hideFlags": 0
 }

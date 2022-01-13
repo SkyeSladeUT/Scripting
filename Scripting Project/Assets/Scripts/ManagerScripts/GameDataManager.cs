@@ -23,7 +23,7 @@ namespace GameManagement {
             get { return _data; }
         }
 
-        public GameData initData;
+        //public GameData initData;
 
         private string InitDataPath = "JSON/InitData.json";
 
@@ -98,16 +98,7 @@ namespace GameManagement {
     
 
     #region SCENE MANAGEMENT
-    [Serializable]
-    public class SVector3
-    {
-        public float x, y, z;
-        public Vector3 GetVector()
-        {
-            return new Vector3(x, y, z);
-        }
 
-    }
 
     [Serializable]
     public class SceneObject
@@ -167,5 +158,29 @@ namespace GameManagement {
         public float DialogueSpeed;
         public float CameraSensitivity;
     }
+    #endregion
+
+    #region SIMPLE CLASSES
+    [Serializable]
+    public class SVector3
+    {
+        public float x, y, z;
+        public Vector3 GetVector()
+        {
+            return new Vector3(x, y, z);
+        }
+
+    }
+
+    [Serializable]
+    public class SColor
+    {
+        public float r, g, b, a;
+        public Color GetColor()
+        {
+            return new Color(r, g, b, a);
+        }
+    }
+
     #endregion
 }

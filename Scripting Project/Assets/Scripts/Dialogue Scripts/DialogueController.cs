@@ -252,7 +252,7 @@ namespace GameManagement
             //Give Choices
             List<TextMeshProUGUI> choiceTexts = new List<TextMeshProUGUI>();
             Color defaultColor = _characters[line.CharacterName].CharacterColor;
-            Color choiceColor = _dialogues.ChoiceColor;
+            Color choiceColor = _dialogues.color.GetColor();
             Color chosenColor = defaultColor;
             chosenColor.a = .5f;
             for (int i = 0; i < line.Choices.Length; i++)
