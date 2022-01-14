@@ -18,24 +18,6 @@ public class JigsawGrab : Drag_3D
         set { _jigsaw = value; }
     }
 
-    private JigsawPieceCollider _top, _right, _left, _bottom;
-    public JigsawPieceCollider Top
-    {
-        get { return _top; }
-    }
-    public JigsawPieceCollider Right
-    {
-        get { return _right; }
-    }
-    public JigsawPieceCollider Left
-    {
-        get { return _left; }
-    }
-    public JigsawPieceCollider Bottom
-    {
-        get { return _bottom; }
-    }
-
     protected override void OnMouseDown()
     {
         mouseDown = true;

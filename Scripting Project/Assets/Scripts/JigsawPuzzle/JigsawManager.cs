@@ -8,10 +8,7 @@ public class JigsawManager : MonoBehaviour
 
     public void Initialize()
     {
-        foreach(var p in pieces)
-        {
-             
-        }
+        
     }
 
 }
