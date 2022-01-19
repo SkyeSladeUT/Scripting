@@ -72,17 +72,27 @@ public class JigsawPieceCollider : MonoBehaviour
         //Snap Pieces
 
         //Make transform the top parent
-        JigsawGrab topCollider = _grab;
-        List<JigsawGrab> jigsawPieces = new List<JigsawGrab>() { _grab };
-        while (topCollider.transform.parent.GetComponentInParent<JigsawGrab>() != null)
+        JigsawPieceCollider topCollider = this;
+        List<JigsawPieceCollider> jigsawPieces = new List<JigsawPieceCollider>() { this };
+        while (topCollider.transform.parent.GetComponentInParent<JigsawPieceCollider>() != null)
         {
-            topCollider = topCollider.transform.parent.GetComponentInParent<JigsawGrab>();
+            topCollider = topCollider.transform.parent.GetComponentInParent<JigsawPieceCollider>();
             jigsawPieces.Add(topCollider);
         }
 
+
+
         if (jigsawPieces.Count > 1)
         {
+            for(int i = 0; i < jigsawPieces.Count-1; i++)
+            {
+                jigsawPieces[i]._grab.transform.parent = jigsawPieces[i]._grab.initparent;
+            }
 
+            for(int i = jigsawPieces.Count-1; i > 0; i--)
+            {
+                jigsawPieces[i].SnapCorrect();
+            }
         }
 
         transform.parent.parent = connectedPiece.snapParent;
@@ -94,6 +104,14 @@ public class JigsawPieceCollider : MonoBehaviour
         connectedPiece.Jigsaw.Correct();
         onPieceSnap?.Invoke();
         return true;
+    }
+
+    public void SnapCorrect()
+    {
+        transform.parent.parent = correctPiece.snapParent;
+        transform.parent.localPosition = Vector3.zero;
+        this.enabled = false;
+        correctPiece.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
