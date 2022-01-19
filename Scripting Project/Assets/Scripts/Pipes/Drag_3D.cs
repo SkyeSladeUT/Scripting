@@ -5,9 +5,14 @@ using UnityEngine.Events;
 
 public class Drag_3D : MonoBehaviour
 {
-    private Vector3 _offset;
-    private float _zPosition;
-    private Camera _camera;
+    public enum ELockAxis
+    {
+        X, Y, Z
+    }
+
+    protected Vector3 _offset;
+    protected float _zPosition;
+    protected Camera _camera;
 
     public delegate void OnBeginDrag(DragEventArgs e);
     public delegate void OnEndDrag(DragEventArgs e);
@@ -18,6 +23,8 @@ public class Drag_3D : MonoBehaviour
     [HideInInspector]
     public float ZTransform = 1;
 
+    public ELockAxis LockAxis = ELockAxis.Z;
+
     private void Start()
     {
         _camera = Camera.main;
@@ -27,23 +34,26 @@ public class Drag_3D : MonoBehaviour
     {
         onBeginDrag?.Invoke(new DragEventArgs(this));
         _zPosition = _camera.WorldToScreenPoint(gameObject.transform.position).z;
-        //_offset = gameObject.transform.position - GetMouseAsWorldPoint();
         _offset = Vector3.zero;
     }
 
-    private Vector3 GetMouseAsWorldPoint()
+    protected Vector3 GetMouseAsWorldPoint()
     {
         Vector3 mousePoint = Input.mousePosition;
         mousePoint.z = _zPosition;
         return _camera.ScreenToWorldPoint(mousePoint);
-
     }
 
     protected virtual void OnMouseDrag()
     {
         transform.position = GetMouseAsWorldPoint() + _offset;
         Vector3 localz = transform.localPosition;
-        localz.z = ZTransform;
+        if (LockAxis == ELockAxis.X)
+            localz.x = ZTransform;
+        else if (LockAxis == ELockAxis.Y)
+            localz.y = ZTransform;
+        else
+            localz.z = ZTransform;
         transform.localPosition = localz;
     }
 

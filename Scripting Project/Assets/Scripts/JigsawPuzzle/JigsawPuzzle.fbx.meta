@@ -3,7 +3,17 @@ guid: 5ec1f9f1348c9494093cf56df709df0d
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Puzzle_Bottom_MAT
+    second: {fileID: 2100000, guid: 4412e6772caa25645a1435a352d6504b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Puzzle_Top_MAT
+    second: {fileID: 2100000, guid: 3f65832cee17c3a47ab2bee7d26d2533, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -34,7 +44,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1

@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class JigsawObject
 {
-    public bool CorrectPlacement;
+    public JigsawObject()
+    {
+        CorrectPlacement = false;
+    }
 
+    public bool CorrectPlacement;
+    public void Correct()
+    {
+        CorrectPlacement = true;
+    }
 }

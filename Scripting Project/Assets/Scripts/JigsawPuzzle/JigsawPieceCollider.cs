@@ -12,12 +12,40 @@ public class JigsawPieceCollider : MonoBehaviour
     public JigsawPieceCollider correctPiece;
     public ColliderSide Side;
     private Collider _collider;
-    public Transform snapParent;
+    public Collider Col
+    {
+        get 
+        { 
+            if (_collider == null)
+            {
+                _collider = GetComponent<Collider>();
+            }
+            return _collider; 
+        }
+    }
+    private Transform snapParent;
+    private JigsawGrab _grab;
+
+    private JigsawObject _jigsaw;
+    public JigsawObject Jigsaw
+    {
+        get { return _jigsaw; }
+    }
+
+    public delegate void OnPieceSnap();
+    public OnPieceSnap onPieceSnap;
 
     private void Awake()
     {
         _collider = GetComponent<Collider>();
         _collider.enabled = false;
+        snapParent = transform.GetChild(0);
+        _grab = GetComponentInParent<JigsawGrab>();
+    }
+
+    public void Initialize()
+    {
+        _jigsaw = new JigsawObject();
     }
 
     private bool CheckCollider(JigsawPieceCollider connectedPiece)
@@ -42,22 +70,65 @@ public class JigsawPieceCollider : MonoBehaviour
                 break;
         }
         //Snap Pieces
-        transform.parent = connectedPiece.snapParent;
-        transform.localPosition = Vector3.zero;
-        gameObject.SetActive(false);
+
+        //Make transform the top parent
+        JigsawGrab topCollider = _grab;
+        List<JigsawGrab> jigsawPieces = new List<JigsawGrab>() { _grab };
+        while (topCollider.transform.parent.GetComponentInParent<JigsawGrab>() != null)
+        {
+            topCollider = topCollider.transform.parent.GetComponentInParent<JigsawGrab>();
+            jigsawPieces.Add(topCollider);
+        }
+
+        if (jigsawPieces.Count > 1)
+        {
+
+        }
+
+        transform.parent.parent = connectedPiece.snapParent;
+        transform.parent.localPosition = Vector3.zero;
+        this.enabled = false;
+        connectedPiece.GetComponent<JigsawPieceCollider>().enabled = false;
+        this.enabled = false;
+        Jigsaw.Correct();
+        connectedPiece.Jigsaw.Correct();
+        onPieceSnap?.Invoke();
         return true;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Piece"))
+        if (_grab.grabbed && !Jigsaw.CorrectPlacement)
         {
-            //Check to see if connections are compatible (if correct piece)
-            JigsawPieceCollider connectedPiece = other.GetComponent<JigsawPieceCollider>();
-            if(connectedPiece != null && connectedPiece == correctPiece)
+            if (other.CompareTag("Piece"))
             {
-                CheckCollider(connectedPiece);               
+                //Check to see if connections are compatible (if correct piece)
+                JigsawPieceCollider connectedPiece = other.GetComponent<JigsawPieceCollider>();
+                if (connectedPiece != null && connectedPiece == correctPiece)
+                {
+                    CheckCollider(connectedPiece);
+                }
+
             }
+        }
+    }
+
+    public void UpdateRotation()
+    {
+        switch (Side)
+        {
+            case ColliderSide.Bottom:
+                Side = ColliderSide.Right;
+                break;
+            case ColliderSide.Left:
+                Side = ColliderSide.Bottom;
+                break;
+            case ColliderSide.Right:
+                Side = ColliderSide.Top;
+                break;
+            case ColliderSide.Top:
+                Side = ColliderSide.Left;
+                break;
         }
     }
 }
