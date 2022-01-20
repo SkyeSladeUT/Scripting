@@ -9,6 +9,8 @@ public class WeightManager : MonoBehaviour
     public float MaxDifference;
     public Animator ScaleAnim;
 
+    public int DesiredWeight;
+
     public void AddWeight(bool side01, int weight)
     {
         if (side01)
@@ -33,5 +35,10 @@ public class WeightManager : MonoBehaviour
         Difference = Mathf.Clamp(Difference, -MaxDifference, MaxDifference);
         float DifferenceNormalized = Difference / MaxDifference;
         ScaleAnim.SetFloat("ScaleDifference", DifferenceNormalized);
+    }
+
+    public void CheckWeight()
+    {
+
     }
 }
