@@ -7,14 +7,14 @@
             "actions": [
                 {
                     "name": "Walk",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "bf3da6b9-3e6c-4919-a7ea-d9a2f391579a",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
                 },
                 {
-                    "name": "Run",
+                    "name": "Sprint",
                     "type": "Value",
                     "id": "441c997f-ba29-4fbc-9b11-e7e4f9086612",
                     "expectedControlType": "Button",
@@ -39,11 +39,11 @@
                 },
                 {
                     "name": "CameraRotate",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "826758e6-5e86-4b8d-9518-da6230b91a1c",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "Press"
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -54,7 +54,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard/Mouse",
-                    "action": "Run",
+                    "action": "Sprint",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -65,7 +65,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard/Mouse",
-                    "action": "Run",
+                    "action": "Sprint",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -94,7 +94,7 @@
                 {
                     "name": "WASD",
                     "id": "a7927c10-eb8b-470f-9838-cb6983bddac9",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=2)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -149,7 +149,7 @@
                 {
                     "name": "Arrows",
                     "id": "7ab55f62-fa6c-4608-99c5-3a53e5157b5d",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=2)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

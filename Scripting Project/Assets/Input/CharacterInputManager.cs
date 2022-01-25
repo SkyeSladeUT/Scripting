@@ -62,7 +62,7 @@ public class CharacterInputManager
                 Vector3 moveDirection = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
                 moveDirection = moveDirection.normalized;
                 moveDirection *= _speed * Time.deltaTime;
-                if (Input.Player.Run.ReadValue<float>() > 0)
+                if (Input.Player.Sprint.ReadValue<float>() > 0)
                     moveDirection *= _runMultiplier;
 
                 Controller.Move(moveDirection);
