@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
-public class Drag_3D : MonoBehaviour
+public class Drag_3D : MonoBehaviour, IClickable
 {
     public enum ELockAxis
     {
@@ -32,14 +33,22 @@ public class Drag_3D : MonoBehaviour
 
     protected virtual void OnMouseDown()
     {
-        onBeginDrag?.Invoke(new DragEventArgs(this));
         _zPosition = _camera.WorldToScreenPoint(gameObject.transform.position).z;
-        _offset = Vector3.zero;
+        _offset = gameObject.transform.position - GetMouseAsWorldPoint();
+        //_offset = Vector3.zero;
+        onBeginDrag?.Invoke(new DragEventArgs(this));
     }
 
     protected Vector3 GetMouseAsWorldPoint()
     {
-        Vector3 mousePoint = Input.mousePosition;
+        //Vector3 mousePoint = Input.mousePosition;
+        if (LockAxis == ELockAxis.X)
+            ZTransform = gameObject.transform.localPosition.x;
+        else if (LockAxis == ELockAxis.Y)
+            ZTransform = gameObject.transform.localPosition.y;
+        else
+            ZTransform = gameObject.transform.localPosition.z;
+        Vector3 mousePoint = Mouse.current.position.ReadValue();
         mousePoint.z = _zPosition;
         return _camera.ScreenToWorldPoint(mousePoint);
     }
@@ -60,5 +69,20 @@ public class Drag_3D : MonoBehaviour
     protected virtual void OnMouseUp()
     {
         onEndDrag?.Invoke(new DragEventArgs(this));
+    }
+
+    void IClickable.OnMouseDown()
+    {
+        this.OnMouseDown();
+    }
+
+    void IClickable.OnMouseDrag()
+    {
+        this.OnMouseDrag();
+    }
+
+    void IClickable.OnMouseUp()
+    {
+        this.OnMouseUp();
     }
 }

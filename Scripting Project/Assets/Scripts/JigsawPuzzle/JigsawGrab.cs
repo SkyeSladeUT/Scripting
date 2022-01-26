@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DigitalRuby.Tween;
-
+using UnityEngine.InputSystem;
 public class JigsawGrab : Drag_3D
 {
     private float clickTime;
@@ -35,10 +35,15 @@ public class JigsawGrab : Drag_3D
         clickTime = 0;
         if (currentGrab != null)
         {
-            onBeginDrag?.Invoke(new DragEventArgs(this));
+            if (LockAxis == ELockAxis.X)
+                ZTransform = currentGrab.transform.localPosition.x;
+            else if (LockAxis == ELockAxis.Y)
+                ZTransform = currentGrab.transform.localPosition.y;
+            else
+                ZTransform = currentGrab.transform.localPosition.z;
             _zPosition = _camera.WorldToScreenPoint(currentGrab.transform.position).z;
-            _offset = Vector3.zero;
-        }
+            _offset = currentGrab.transform.position - GetMouseAsWorldPoint();
+            onBeginDrag?.Invoke(new DragEventArgs(this));        }
     }
 
     protected override void OnMouseDrag()

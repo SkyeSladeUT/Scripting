@@ -226,6 +226,33 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Simple"",
+            ""id"": ""6c38c50d-9a0c-44b9-85c8-c81f62c16e4f"",
+            ""actions"": [
+                {
+                    ""name"": ""LeftMouse"",
+                    ""type"": ""Button"",
+                    ""id"": ""b7cecb7d-d7c8-4f96-84d6-ad5e94bb4c19"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""bd283ba7-3019-45a0-8748-7954cee2b115"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard/Mouse"",
+                    ""action"": ""LeftMouse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -254,6 +281,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_CameraRotate = m_Player.FindAction("CameraRotate", throwIfNotFound: true);
+        // Simple
+        m_Simple = asset.FindActionMap("Simple", throwIfNotFound: true);
+        m_Simple_LeftMouse = m_Simple.FindAction("LeftMouse", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -364,6 +394,39 @@ public class @InputMaster : IInputActionCollection, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // Simple
+    private readonly InputActionMap m_Simple;
+    private ISimpleActions m_SimpleActionsCallbackInterface;
+    private readonly InputAction m_Simple_LeftMouse;
+    public struct SimpleActions
+    {
+        private @InputMaster m_Wrapper;
+        public SimpleActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
+        public InputAction @LeftMouse => m_Wrapper.m_Simple_LeftMouse;
+        public InputActionMap Get() { return m_Wrapper.m_Simple; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SimpleActions set) { return set.Get(); }
+        public void SetCallbacks(ISimpleActions instance)
+        {
+            if (m_Wrapper.m_SimpleActionsCallbackInterface != null)
+            {
+                @LeftMouse.started -= m_Wrapper.m_SimpleActionsCallbackInterface.OnLeftMouse;
+                @LeftMouse.performed -= m_Wrapper.m_SimpleActionsCallbackInterface.OnLeftMouse;
+                @LeftMouse.canceled -= m_Wrapper.m_SimpleActionsCallbackInterface.OnLeftMouse;
+            }
+            m_Wrapper.m_SimpleActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @LeftMouse.started += instance.OnLeftMouse;
+                @LeftMouse.performed += instance.OnLeftMouse;
+                @LeftMouse.canceled += instance.OnLeftMouse;
+            }
+        }
+    }
+    public SimpleActions @Simple => new SimpleActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -380,5 +443,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnCameraRotate(InputAction.CallbackContext context);
+    }
+    public interface ISimpleActions
+    {
+        void OnLeftMouse(InputAction.CallbackContext context);
     }
 }

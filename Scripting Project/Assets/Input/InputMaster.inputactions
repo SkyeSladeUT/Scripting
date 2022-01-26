@@ -213,6 +213,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Simple",
+            "id": "6c38c50d-9a0c-44b9-85c8-c81f62c16e4f",
+            "actions": [
+                {
+                    "name": "LeftMouse",
+                    "type": "Button",
+                    "id": "b7cecb7d-d7c8-4f96-84d6-ad5e94bb4c19",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bd283ba7-3019-45a0-8748-7954cee2b115",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard/Mouse",
+                    "action": "LeftMouse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

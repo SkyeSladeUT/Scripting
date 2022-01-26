@@ -124,8 +124,8 @@ public class TestPlayerLocomotion : MonoBehaviour
                 _animatorManager.PlayTargetAnimation("EmptyLanding", true);
             }
 
-            Vector3 raycastHitPoint = hit.point;
-            targetPosition.y = raycastHitPoint.y + FloatingColliderOffset;
+            //Vector3 raycastHitPoint = hit.point;
+            //targetPosition.y = raycastHitPoint.y + FloatingColliderOffset;
             inAirTimer = 0;
             isGrounded = true;
         }
@@ -134,7 +134,7 @@ public class TestPlayerLocomotion : MonoBehaviour
             isGrounded = false;
         }
 
-        if(isGrounded && !isJumping)
+        /*if(isGrounded && !isJumping)
         {
             transform.position = targetPosition;
 
@@ -145,8 +145,8 @@ public class TestPlayerLocomotion : MonoBehaviour
             else
             {
                 transform.position = targetPosition;
-            }*/
-        }
+            }
+        }*/
     }
 
     public void HandleJump()
