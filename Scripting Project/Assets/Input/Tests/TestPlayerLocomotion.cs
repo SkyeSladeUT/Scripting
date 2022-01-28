@@ -77,7 +77,6 @@ public class TestPlayerLocomotion : MonoBehaviour
             }
         }
 
-        _moveDirection *= RunningSpeed;
         Vector3 movementVelocity = _moveDirection;
 
         _rigidbody.velocity = movementVelocity;

@@ -6,7 +6,7 @@ public class TestPlayerManager : MonoBehaviour
 {
     TestInputManager _manager;
     TestPlayerLocomotion _playerLocomotion;
-    TestCameraManager _cameraManager;
+    //TestCameraManager _cameraManager;
     Animator _animator;
 
     public bool isInteracting;
@@ -15,7 +15,7 @@ public class TestPlayerManager : MonoBehaviour
     {
         _manager = GetComponent<TestInputManager>();
         _playerLocomotion = GetComponent<TestPlayerLocomotion>();
-        _cameraManager = FindObjectOfType<TestCameraManager>();
+       // _cameraManager = FindObjectOfType<TestCameraManager>();
         _animator = GetComponentInChildren<Animator>();
     }
 
@@ -31,7 +31,7 @@ public class TestPlayerManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        _cameraManager.HandleAllCameraMovement();
+        //_cameraManager.HandleAllCameraMovement();
 
         isInteracting = _animator.GetBool("isInteracting");
         _playerLocomotion.isJumping = _animator.GetBool("isJumping");

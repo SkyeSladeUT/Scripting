@@ -216,12 +216,12 @@
         },
         {
             "name": "Simple",
-            "id": "6c38c50d-9a0c-44b9-85c8-c81f62c16e4f",
+            "id": "7716b60c-2e06-4bd5-aef8-532682f55833",
             "actions": [
                 {
                     "name": "LeftMouse",
                     "type": "Button",
-                    "id": "b7cecb7d-d7c8-4f96-84d6-ad5e94bb4c19",
+                    "id": "e61a6533-d4f3-4c78-b331-878bc8b78f00",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -230,7 +230,7 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "bd283ba7-3019-45a0-8748-7954cee2b115",
+                    "id": "e6c6ed22-6bdb-4e1d-aae3-d5fc748b3bcf",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",

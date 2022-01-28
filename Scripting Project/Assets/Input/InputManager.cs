@@ -4,45 +4,71 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    private CharacterInputManager _characterInput;
-
-    public void Initialize()
+    private InputManager _instance;
+    public InputManager Instance
     {
-        if(_characterInput == null)
+        get { return _instance; }
+    }
+
+    private InputMaster _inputMaster;
+
+    private void Awake()
+    {
+        if(Instance != null && Instance != this)
         {
-            _characterInput = new CharacterInputManager(this.gameObject, Camera.main.transform);
-            EnableCharacter();
+            Destroy(this.gameObject);
         }
+        _instance = this;
+        DontDestroyOnLoad(this.gameObject);
     }
 
-    public void EnableCharacter()
+    private void OnEnable()
     {
-        _characterInput.Enable();
-        HideMouse();
-    }
-
-    public void DisableCharacter()
-    {
-        _characterInput.Disable();
-    }
-
-    private void Update()
-    {
-        if(_characterInput != null)
+        if(_inputMaster == null)
         {
-            _characterInput.OnUpdate();
+            _inputMaster = new InputMaster();
+            _inputMaster.Player.Walk.performed += context =>
+            {
+                Vector2 value = context.ReadValue<Vector2>();
+                InputVariables.HorizontalInput = value.x;
+                InputVariables.VerticalInput = value.y;
+            };
+            _inputMaster.Player.CameraRotate.performed += context =>
+            {
+                Vector2 value = context.ReadValue<Vector2>();
+                InputVariables.HorizontalCamera = value.x;
+                InputVariables.VerticalCamera = value.y;
+            };
+
+            _inputMaster.Player.Sprint.performed += context => InputVariables.Sprinting = true;
+            _inputMaster.Player.Sprint.canceled += context => InputVariables.Sprinting = false;
+
+            _inputMaster.Player.Jump.performed += context => InputVariables.Jump = true;
         }
+        _inputMaster.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _inputMaster.Disable();
     }
 
     public void HideMouse()
     {
-        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
-
     public void ShowMouse()
     {
-        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
+}
+
+public static class InputVariables 
+{
+    public static float VerticalInput;
+    public static float HorizontalInput;
+    public static float VerticalCamera;
+    public static float HorizontalCamera;
+    public static bool Sprinting;
+    public static bool Jump;
 }

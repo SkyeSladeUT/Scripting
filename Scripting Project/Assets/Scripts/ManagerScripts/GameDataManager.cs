@@ -151,12 +151,69 @@ namespace GameManagement {
     #region OPTIONS MANAGEMENT
     public class Options
     {
-        public float MainVolume;
-        public float MusicVolume;
-        public float SFXVolume;
-        public float DialogueVolume;
-        public float DialogueSpeed;
-        public float CameraSensitivity;
+        public delegate void OnSettingChange(float val);
+        public OnSettingChange onMainVolume, onMusicVolume, onSFXVolume, onDialogueVolume, onDialogueSpeed, onCameraSensitivity;
+
+        private float _mainVolume;
+        public float MainVolume
+        {
+            get { return _mainVolume; }
+            set 
+            { 
+                _mainVolume = value;
+                onMainVolume?.Invoke(_mainVolume);
+            }
+        }
+        private float _musicVolume;
+        public float MusicVolume
+        {
+            get { return _musicVolume; }
+            set
+            {
+                _musicVolume = value;
+                onMusicVolume?.Invoke(_musicVolume);
+            }
+        }
+        private float _sfxVolume;
+        public float SFXVolume
+        {
+            get { return _sfxVolume; }
+            set
+            {
+                _sfxVolume = value;
+                onSFXVolume?.Invoke(_sfxVolume);
+            }
+        }
+        private float _dialogueVolume;
+        public float DialogueVolume
+        {
+            get { return _dialogueVolume; }
+            set
+            {
+                _dialogueVolume = value;
+                onDialogueVolume?.Invoke(_dialogueVolume);
+            }
+        }
+        private float _dialogueSpeed;
+        public float DialogueSpeed
+        {
+            get { return _dialogueSpeed; }
+            set
+            {
+                _dialogueSpeed = value;
+                onDialogueSpeed?.Invoke(_dialogueSpeed);
+            }
+        }
+        private float _cameraSensitivity;
+        public float CameraSensitivity
+        {
+            get { return _cameraSensitivity; }
+            set
+            {
+                _cameraSensitivity = value;
+                onCameraSensitivity?.Invoke(_cameraSensitivity);
+            }
+        }
     }
     #endregion
 

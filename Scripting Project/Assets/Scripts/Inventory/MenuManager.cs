@@ -16,12 +16,16 @@ namespace GameManagement
         private GameDataManager _gdmanager;
         public GameDataManager GDManager
         {
-            get { return _gdmanager; }
+            get 
+            { 
+                if(_gdmanager == null)
+                    _gdmanager = FindObjectOfType<GameDataManager>();
+                return _gdmanager; 
+            }
         }
 
         private void Awake()
         {
-            _gdmanager = FindObjectOfType<GameDataManager>();
             fullMenu = new FullMenu(this, SelectedColor, DefaultColor);
         }
     }
