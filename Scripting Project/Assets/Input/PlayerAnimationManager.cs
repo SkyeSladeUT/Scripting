@@ -33,12 +33,29 @@ public class PlayerAnimationManager
     {
         #region SNAPPED SPEED
         float snappedSpeed = 0;
-        if (InputVariables.Sprinting)
+        if (!InputVariables.Crouching && InputVariables.Sprinting && speed > .55f)
             snappedSpeed = 2;
         else if (speed > .55f)
-            snappedSpeed = 1;
+        {
+            if (InputVariables.Crouching)
+                snappedSpeed = -1;
+            else
+                snappedSpeed = 1;
+        }
         else if (speed > 0)
-            snappedSpeed = .5f;
+        {
+            if (InputVariables.Crouching)
+                snappedSpeed = -1.5f;
+            else
+                snappedSpeed = .5f;
+        }
+        else
+        {
+            if (InputVariables.Crouching)
+                snappedSpeed = -2;
+            else
+                snappedSpeed = 0;
+        }
         #endregion
 
         _animator.SetFloat("Speed", snappedSpeed, .1f, Time.deltaTime);

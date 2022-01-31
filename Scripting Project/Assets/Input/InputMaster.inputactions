@@ -44,24 +44,21 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Crawl",
+                    "type": "Button",
+                    "id": "56ec4f2c-b9f8-4d4a-8df0-4dc70c589218",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "f642cb1d-7ee0-4034-b695-f750e6db7068",
-                    "path": "<Keyboard>/leftShift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard/Mouse",
-                    "action": "Sprint",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "086c97cd-293f-4da8-a246-92eb9c40ef27",
-                    "path": "<Keyboard>/rightShift",
+                    "path": "<Keyboard>/shift",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard/Mouse",
@@ -209,6 +206,17 @@
                     "processors": "ScaleVector2(x=-0.2,y=-0.1)",
                     "groups": "Keyboard/Mouse",
                     "action": "CameraRotate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1e812526-5577-4aea-bef4-a0aeca088a7f",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard/Mouse",
+                    "action": "Crawl",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -38,6 +38,15 @@ namespace PlayerInput
 
         }
 
+        private void Update()
+        {
+            if (InputVariables.Jump)
+            {
+                InputVariables.Jump = false;
+                PlayerMovement.HandleJumping();
+            }
+        }
+
         private void FixedUpdate()
         {
             PlayerMovement.HandleAllMovement();

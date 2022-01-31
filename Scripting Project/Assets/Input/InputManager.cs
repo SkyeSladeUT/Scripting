@@ -44,6 +44,9 @@ public class InputManager : MonoBehaviour
             _inputMaster.Player.Sprint.canceled += context => InputVariables.Sprinting = false;
 
             _inputMaster.Player.Jump.performed += context => InputVariables.Jump = true;
+
+            _inputMaster.Player.Crawl.performed += context => InputVariables.Crouching = true;
+            _inputMaster.Player.Crawl.canceled += context => InputVariables.Crouching = false;
         }
         _inputMaster.Enable();
     }
@@ -71,4 +74,5 @@ public static class InputVariables
     public static float HorizontalCamera;
     public static bool Sprinting;
     public static bool Jump;
+    public static bool Crouching;
 }
