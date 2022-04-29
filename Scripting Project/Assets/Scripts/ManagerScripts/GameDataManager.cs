@@ -134,6 +134,7 @@ namespace GameManagement {
     {
         public string SceneName;
         public int SceneIndex;
+        public EnvironmentalPresets lightingPresets;
         public List<SceneObject> SceneObjects;
 
         public void Load()
